@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lenovo Service Support — Home</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- TOP INFO BAR -->
+   <section class="hero-section">
+    <div class="top-header" id="topHeader">
+      <div class="top-inner container">
+        <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
+        <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
+       
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+   <header class="main-header">
+  <div class="nav-inner container">
+    <a class="logo" href="index.html">
+      <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
+    </a>
+
+    <div class="nav-cta">
+      <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+     <div class="top-right">
+          <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
+      </div>
+  </div>
+</header>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-content-wrapper">
+    <!-- Logo on top -->
+    <div class="menu-logo">
+      <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo">
+    </div>
+
+    <!-- Menu List -->
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li class="menu-dropdown">
+        <div class="menu-item-wrapper">
+          <span class="menu-label">Services</span>
+          <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
+        </div>
+        <ul class="submenu">
+          <li><a href="#">Lenovo Laptop Battery Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Keyboard Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Motherboard Repair</a></li>
+          <li><a href="#">Lenovo Laptop Screen Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+          <li><a href="#">Lenovo Laptop Charger Replacement</a></li>
+          <li><a href="#">Lenovo Laptop SSD / HDD Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Hinges Fabrication</a></li>
+          <li><a href="#">Lenovo Laptop Panel Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Power Supply Replacement</a></li>
+          <li><a href="#">Lenovo Laptop RAM Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Water Damage Repair</a></li>
+          <li><a href="#">Lenovo Laptop Speakers Not Working Repair</a></li>
+          <li><a href="#">Lenovo Laptop Windows OS Update & Installation</a></li>
+        </ul>
+      </li>
+
+      <li class="menu-item"><a href="book-repair.html">Book a Repair</a></li>
+      <li class="menu-item"><a href="track.html">Track My Repair</a></li>
+      <li class="menu-item"><a href="blog.html">Blog</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Contact Info -->
+    <div class="menu-contact">
+      <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
+      <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
+      <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
+    </div>
+
+    <!-- Close Button -->
+    <button class="btn-outline" id="closeMenu">Close</button>
+  </div>
+</div>
+
+    </section>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="carousel">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <img src="images/we-billable-repair_1.webp" alt="Technician repairing laptop" class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content" data-aos="fade-up">
+        <div class="eyebrow">FIVE-STAR SERVICE</div>
+        <h1>Expert Lenovo repair with fast service<br>guaranteed reliable results</h1>
+        <p>Genuine parts, certified technicians, and warranty-backed repairs for ThinkPad, IdeaPad, Legion and more.</p>
+        <div class="hero-actions">
+          <a href="book-repair.html" class="btn btn-primary">Book a Repair</a>
+          <a href="services.html" class="btn btn-outline">Our Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img src="images/lenovo-laptop-repair.jpg" alt="Laptop repair service" class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-content" data-aos="fade-up">
+        <div class="eyebrow">EXPERT TECHNICIANS</div>
+        <h1>Fast and Reliable Repairs for All Lenovo Models</h1>
+        <p>From screen replacements to motherboard repair, our certified team ensures your device is back in top condition.</p>
+        <div class="hero-actions">
+          <a href="book-repair.html" class="btn btn-primary">Book a Repair</a>
+          <a href="services.html" class="btn btn-outline">Our Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="carousel-arrow prev">&#10094;</button>
+    <button class="carousel-arrow next">&#10095;</button>
+  </div>
+
+  <!-- Carousel Navigation Dots -->
+  <div class="carousel-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+  </div>
+</section>
+
+
+
+
+  <!-- WHY CHOOSE US SECTION -->
+<section id="why-choose-us" class="why-choose-us" data-aos="fade-up">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <h2>Why Choose Us</h2>
+      <p>Hyderabad's Leading MacBook Service Center</p>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Apple Certified Technicians -->
+      <article class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-icon">
+          <span>🍎</span>
+        </div>
+        <h3>Apple Certified Technicians</h3>
+        <p>Our repair team consists of Apple-certified technicians with extensive experience in diagnosing and fixing all MacBook models, from the latest M3 series to older Intel-based models.</p>
+      </article>
+
+      <!-- Genuine Apple Parts -->
+      <article class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-icon">
+          <span>🛠️</span>
+        </div>
+        <h3>Genuine Apple Parts</h3>
+        <p>We use only genuine Apple parts for repairs, ensuring the longevity and optimal performance of your MacBook. Our parts come with a 90-day warranty for your peace of mind.</p>
+      </article>
+
+      <!-- Same-Day Repairs -->
+      <article class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-icon">
+          <span>⏱️</span>
+        </div>
+        <h3>Same-Day Repairs</h3>
+        <p>Most common repairs like screen replacement, battery replacement, and keyboard issues can be completed the same day. We value your time and ensure quick turnaround.</p>
+      </article>
+
+      <!-- Free Diagnostics -->
+      <article class="card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-icon">
+          <span>🔍</span>
+        </div>
+        <h3>Free Diagnostics</h3>
+        <p>We offer free initial diagnostics to identify the exact issue with your MacBook. Our transparent pricing ensures you know the cost before we begin any repair work.</p>
+      </article>
+
+      <!-- Data Security -->
+      <article class="card" data-aos="fade-up" data-aos-delay="500">
+        <div class="card-icon">
+          <span>🔒</span>
+        </div>
+        <h3>Data Security</h3>
+        <p>Your data security is our priority. We take complete backup of your data before any repair and ensure it remains safe throughout the repair process.</p>
+      </article>
+
+      <!-- Pickup & Delivery -->
+      <article class="card" data-aos="fade-up" data-aos-delay="600">
+        <div class="card-icon">
+          <span>🚚</span>
+        </div>
+        <h3>Pickup & Delivery</h3>
+        <p>We offer free pickup and delivery services within Hyderabad for your convenience. Save time and let us handle the logistics of your MacBook repair.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE PROCESS SECTION -->
+
+            <section class="section-dark text-light jarallax">
+                <img src="images/we-billable-repair_1.webp" class="jarallax-img" alt="">
+                <div class="sw-overlay"></div>
+                <div class="row g-4 mb-2 justify-content-center">
+                    <div class="col-lg-5 text-center">
+                        <div class="subtitle s2 wow fadeInUp mb-2">Services Process</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">How It Works</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4 grid-divider">
+                        <div class="col-lg-1-5 col-md-6 wow fadeInRight" data-wow-delay=".2s">
+                            <div class="de-step-s1 text-center">
+                                <div class="d-number bg-color-2 text-dark wow fadeInRight" data-wow-delay=".2s">Step 1</div>
+                                <h4>Select your repair &amp; request a quote</h4>
+                                <div class="abs abs-center fs-96 top-50 text-white op-2 fw-bold">1</div>                                
+                            </div>
+                        </div>
+                        <div class="col-lg-1-5 col-md-6 wow fadeInRight" data-wow-delay=".4s">
+                            <div class="de-step-s1 text-center">
+                                <div class="d-number bg-color-2 text-dark wow fadeInRight" data-wow-delay=".4s">Step 2</div>
+                                <h4>Send you gadget or visit our store</h4>
+                                <div class="abs abs-center fs-96 top-50 text-white op-2 fw-bold">2</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1-5 col-md-6 wow fadeInRight" data-wow-delay=".6s">
+                            <div class="de-step-s1 text-center">
+                                <div class="d-number bg-color-2 text-dark wow fadeInRight" data-wow-delay=".6s">Step 3</div>
+                                <h4>Our technicians fix your gadget</h4>
+                                <div class="abs abs-center fs-96 top-50 text-white op-2 fw-bold">3</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1-5 col-md-6 wow fadeInRight" data-wow-delay=".8s">
+                            <div class="de-step-s1 text-center">
+                                <div class="d-number bg-color-2 text-dark wow fadeInRight" data-wow-delay=".8s">Step 4</div>
+                                <h4>We'll request payment</h4>
+                                <div class="abs abs-center fs-96 top-50 text-white op-2 fw-bold">4</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1-5 col-md-6 wow fadeInRight" data-wow-delay="1s">
+                            <div class="de-step-s1 text-center">
+                                <div class="d-number bg-color-2 text-dark wow fadeInRight" data-wow-delay="1s">Step 5</div>
+                                <h4>Return to you</h4>
+                                <div class="abs abs-center fs-96 top-50 text-white op-2 fw-bold">5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+  <!-- TRACK -->
+  <section id="track" class="track-section" data-aos="fade-up">
+    <div class="container">
+      <div class="track-inner">
+        <div class="track-left">
+          <h2>Track Your Repair</h2>
+          <p>Enter your order number to view repair status and estimated completion.</p>
+        </div>
+        <div class="track-right">
+          <input type="text" id="orderNumber" placeholder="Enter your order number..." />
+          <button class="btn btn-track" id="trackBtn">Track It</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section id="services-preview" class="services" data-aos="fade-up">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Services</h2>
+        <p>Full-service Lenovo repairs — hardware, software, diagnostics and data recovery.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="card" data-aos="zoom-in" data-aos-delay="80">
+          <div class="card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M3 5h18v10H3z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 19h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Laptop Repair</h3>
+          <p>Screen replacement, motherboard repair, battery & keyboard replacements for ThinkPad, IdeaPad, Legion, Yoga.</p>
+        </article>
+
+        <article class="card" data-aos="zoom-in" data-aos-delay="160">
+          <div class="card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <rect x="3" y="2" width="18" height="20" rx="2" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M8 6h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Battery & Power</h3>
+          <p>Battery health diagnostics, charging issues and DC jack repair.</p>
+        </article>
+
+        <article class="card" data-aos="zoom-in" data-aos-delay="240">
+          <div class="card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M12 2v12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M9 8h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Hardware Repair</h3>
+          <p>Parts replacement, SSD/HDD upgrades, RAM install and cooling repair.</p>
+        </article>
+
+        <article class="card contact-card" data-aos="zoom-in" data-aos-delay="320">
+          <div class="card-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M21 15a2 2 0 0 1-2 2h-3l-3 3-3-3H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <h3>Contact Us</h3>
+          <p>OS installs, data recovery, malware removal and warranty questions. Visit or call our center.</p>
+          <a class="more-link" href="contact.html">Get in touch →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+ <!-- Laptop Service Section -->
+<section class="laptop-service py-12 bg-gray-50">
+  <div class="container mx-auto flex flex-col md:flex-row items-start gap-8 px-6">
+    <!-- Left content -->
+    <div class="flex-1">
+      <h2 class="text-3xl font-bold mb-4">Quality Service | Quick Repair | Free Estimation</h2>
+      <h3 class="text-xl font-semibold text-red-600 mb-6">
+        All Model Lenovo Laptops Repair with Modern Equipments By Professional Service Engineers
+      </h3>
+      <ul class="space-y-2 text-gray-700">
+        <li>✔ We handle Major Laptop Issues and Resolve them with Perfection.</li>
+        <li>✔ We're quick, we're professional, and we're convenient.</li>
+        <li>✔ 90% of laptops are fixed at the customer's Home by our Certified Engineers.</li>
+        <li>✔ We offer Free Pickup and Delivery in INDIA.</li>
+        <li>✔ Doorstep Laptop Service available.</li>
+        <li>✔ Book Now, Express Repair; we will attend within 1 hour.</li>
+        <li>✔ We Love to Create Smiles. Our 'Clients' Happiness is our Goal.</li>
+        <li>✔ Transparent pricing with no hidden charges or fees.</li>
+        <li>✔ All repairs come with a 90-day warranty for your peace of mind.</li>
+        <li>✔ Genuine parts and components used for all replacements.</li>
+        <li>✔ Expert diagnosis and repair for all major laptop brands.</li>
+        <li>✔ Competitive rates that won't break your budget.</li>
+      </ul>
+    </div>
+
+    <!-- Right contact form -->
+    <div class="flex-1 border-2 border-red-500 rounded-lg p-6 bg-white shadow-md">
+      <h3 class="text-red-600 font-bold text-lg mb-4">Let's Fix Your Lenovo Laptop - Contact Us Today!</h3>
+      <form action="#" method="POST" class="space-y-3">
+        <input type="text" placeholder="Name" name="name" class="w-full border border-gray-300 rounded px-3 py-2">
+        <input type="email" placeholder="E Mail" name="email" class="w-full border border-gray-300 rounded px-3 py-2">
+        <input type="tel" placeholder="Phone" name="phone" class="w-full border border-gray-300 rounded px-3 py-2">
+        <div class="flex gap-2">
+          <select name="service" class="flex-1 border border-gray-300 rounded px-3 py-2">
+            <option value="">--Select your service--</option>
+            <option value="repair">Repair</option>
+            <option value="diagnosis">Diagnosis</option>
+          </select>
+          <select name="warranty" class="flex-1 border border-gray-300 rounded px-3 py-2">
+            <option value="">Warranty</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="flex gap-2">
+          <input type="text" placeholder="Laptop Model" name="laptop_model" class="flex-1 border border-gray-300 rounded px-3 py-2">
+          <input type="text" placeholder="Your Location" name="location" class="flex-1 border border-gray-300 rounded px-3 py-2">
+        </div>
+        <textarea placeholder="Explain in Detail to serve you better" name="details" class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+        <button type="submit" class="w-full bg-red-600 text-white font-bold py-2 rounded hover:bg-red-700 transition">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer" data-aos="fade-up">
+    <div class="container footer-grid">
+      <div>
+        <h3>Lenovo Service Support</h3>
+        <p>105 Main St, New York, NY<br>Mon - Sat: 08:00 - 18:00</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book-repair.html">Book a Repair</a></li>
+          <li><a href="track.html">Track My Repair</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@lenovoservice.example<br>Phone: +1 (555) 123-4567</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Lenovo Authorized Service Support. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+<!-- All your content above -->
+<script>
+  AOS.init({ duration: 700, once: true });
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeMenu = document.getElementById('closeMenu');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('body-no-scroll'); // prevent background scroll
+  });
+
+  // Close menu
+  closeMenu.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('body-no-scroll');
+  });
+
+  // Close if clicked outside menu content
+  menuOverlay.addEventListener('click', (e) => {
+    if(e.target === menuOverlay){
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('body-no-scroll');
+    }
+  });
+
+  // Submenu toggle
+  const toggles = document.querySelectorAll('.submenu-toggle');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const submenu = btn.closest('.menu-dropdown').querySelector('.submenu');
+      submenu.classList.toggle('open');
+      btn.classList.toggle('open'); // rotate arrow
+      e.stopPropagation();
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cursorOuter = document.querySelector('.cursor-outer');
+
+  let mouseX = 0, mouseY = 0;
+  let outerX = 0, outerY = 0;
+  const speed = 0.15;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    // Outer circle moves with lag
+    outerX += (mouseX - outerX) * speed;
+    outerY += (mouseY - outerY) * speed;
+
+    cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+
+
+</script>
+
+<!-- Custom Cursor -->
+<div class="cursor-outer">
+  <div class="cursor-inner"></div>
+</div>
+
+
+
+</body>
+</html>

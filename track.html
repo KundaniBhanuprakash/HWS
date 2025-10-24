@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lenovo Service — Track Repair</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- TOP INFO BAR -->
+  <section class="hero-section">
+    <div class="top-header" id="topHeader">
+      <div class="top-inner container">
+        <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
+        <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
+        <div class="top-right">
+          <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="main-header" id="mainHeader" role="navigation">
+      <div class="nav-inner container">
+        <a class="logo" href="index.html"><span class="logo-strong">Lenovo</span></a>
+
+        <nav class="navbar" id="navbar" aria-label="Main menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="services.html">Services</a></li>
+            <li><a href="book-repair.html">Book a Repair</a></li>
+            <li><a href="track.html">Track My Repair</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-cta">
+          <!-- Menu Button -->
+          <button class="btn btn-red" id="menuBtn">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-content">
+        <h2>Services</h2>
+        <ul>
+          <li>Laptop Repair</li>
+          <li>Battery & Power</li>
+          <li>Hardware Repair</li>
+          <li>OS & Software Support</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>Email: support@lenovoservice.example</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 105 Main St, New York, NY</p>
+
+        <h2>About Us</h2>
+        <p>Lenovo Authorized Service Support providing certified repairs, genuine parts, and excellent service.</p>
+
+        <button class="btn btn-outline" id="closeMenu">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="padding-top:120px;">
+    <section class="page-head" data-aos="fade-up">
+      <h1>Track Your Repair</h1>
+      <p>Enter your order number to check repair status and history.</p>
+    </section>
+
+    <section class="track-card" data-aos="fade-up">
+      <div class="track-inner" style="justify-content:center;">
+        <input type="text" id="orderNumber2" placeholder="Enter your order number..." />
+        <button class="btn btn-track" id="trackBtn2">Track It</button>
+      </div>
+      <div id="trackResult" class="track-result" aria-live="polite" style="margin-top:18px;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-grid">
+      <div>
+        <h3>Lenovo Service Support</h3>
+        <p>105 Main St, New York, NY</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book-repair.html">Book a Repair</a></li>
+          <li><a href="track.html">Track My Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@lenovoservice.example<br>Phone: +1 (555) 123-4567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year4"></span> Lenovo Authorized Service Support. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script> AOS.init({ duration:700, once:true }); </script>
+</body>
+</html>

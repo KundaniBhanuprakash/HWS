@@ -1,0 +1,1130 @@
+:root{
+  --red: #e2231a;
+  --red-dark: #b91c15;
+  --bg: #f5f7fa;
+  --dark: #0d1117;
+  --muted: #6b6f76;
+  --container: 1100px;
+  --topbar-height: 44px;
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; padding:0;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+/* HERO SECTION WRAPPER */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  margin:0;
+  padding:0;
+}
+
+/* TOP INFO BAR */
+.top-header{
+  position: relative; 
+  background: var(--dark);
+  color: #fff;
+  z-index: 120;
+  margin: 0;
+  padding: 10px 0;
+}
+.top-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.top-left, .top-center{font-size:14px; color:#fff}
+.top-right{display:flex;align-items:center;gap:10px}
+
+/* === UPDATED NAVBAR + OVERLAY MENU === */
+
+/* Navbar */
+.main-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  max-width: var(--container);
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Lenovo Logo */
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img.site-logo {
+  height: 50px;        /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo img.site-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Optional – smaller logo for mobile screens */
+@media (max-width: 768px) {
+  .logo img.site-logo {
+    height: 40px;
+  }
+}
+
+/* Hamburger */
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100;
+  background: transparent;
+  border: none;
+  margin-left: 500px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #ff0000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animated to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Overlay menu (slides in from right) */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 420px; /* desktop 35% width handled in media query */
+  height: 100vh;
+  background: rgba(13,17,23,0.96);
+  color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.menu-overlay.active {
+  transform: translateX(0);
+}
+
+.menu-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Logo on top */
+.menu-logo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Content */
+.menu-content {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-content h2 {
+  color: var(--red);
+  margin: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.menu-content li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.menu-content li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu-content li a:hover {
+  color: var(--red);
+}
+
+/* Menu list items */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item, .menu-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-item:hover {
+  color: var(--red);
+}
+
+
+.menu-label {
+  font-size: 14px;
+}
+
+
+/* Main nav items (menu-overlay) */
+.menu-list .menu-item > a,
+.menu-label {
+  color: #fff; /* white for main nav text */
+  text-decoration: none;
+}
+
+/* Submenu links */
+.submenu li a {
+  color: #fff; /* white instead of gray */
+  text-decoration: none;
+}
+
+/* Hover effect */
+.menu-list .menu-item > a:hover,
+.submenu li a:hover {
+  color: var(--red); /* hover changes to red */
+}
+
+/* Dropdown arrow */
+.arrow {
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.dropdown-btn.active .arrow {
+  transform: rotate(180deg); /* Arrow flips on click */
+}
+
+
+/* Submenu styling (nested under Services) */
+.submenu-toggle {
+  background-color: var(--red);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.submenu-toggle.open {
+  transform: rotate(180deg);
+}
+
+/* Submenu */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin: 5px 0 15px 15px;
+  list-style: none;
+}
+
+.submenu.open {
+  max-height: 1000px;
+}
+
+.submenu li {
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.submenu li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  color: var(--red);
+}
+
+
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 30px;
+  padding: 5px 0;
+}
+
+.dropdown-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+
+/* Contact and Button */
+.menu-contact p {
+  color: #ccc;
+  font-size: 0.85rem;
+  margin: 4px 0;
+}
+
+/* Close button */
+.btn-outline {
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: transparent;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* Desktop view: only partial overlay */
+/* Desktop specific */
+@media(min-width:768px){
+  .menu-overlay { width: 35%; }
+  .menu-item { font-size: 15px; }
+}
+
+/*This is for icons on menu overlay*/
+/* Contact Icons */
+.menu-contact p {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.contact-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+/* Prevent body scroll when menu is open */
+.body-no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* desktop menu */
+.navbar ul{
+  display:flex;
+  gap:26px; 
+  list-style:none;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  font-size:0.93rem; 
+  transition:color .25s ease;
+}
+.navbar a:hover, .navbar a.active{color:var(--red)}
+
+/* Right side buttons */
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+.btn-small{padding:8px 12px}
+.btn-red{background:var(--red);color:#fff;border:none;font-size:0.9rem;padding:8px 18px;border-radius:6px;transition:all .25s ease;}
+.btn-red:hover{background:var(--red-dark);transform:scale(1.05);}
+.btn-primary{background:var(--red);color:#fff;border:none;padding:12px 20px;border-radius:8px;}
+.btn-track{background:var(--red);color:#fff;border:none;padding:12px 16px;border-radius:6px;}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin:0;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(.55);
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
+}
+.hero-content{position:relative;z-index:5;max-width:780px;padding:20px;color:#fff;}
+.eyebrow{color:var(--red);font-weight:600;letter-spacing:1.1px;margin-bottom:10px}
+.hero h1{font-size:34px;line-height:1.15;margin:6px 0 14px}
+.hero p{color:#e6e6e6;margin-bottom:18px;font-size:16px}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* TRACK SECTION */
+.track-section{background:#0e1518;color:#fff;padding:36px 0}
+.track-inner{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.track-left h2{margin:0 0 6px;font-size:22px}
+.track-right{display:flex;gap:10px;align-items:center}
+.track-right input{
+  padding:12px 14px;
+  border-radius:6px;
+  border:0;
+  min-width:220px;
+}
+
+/* SERVICES */
+.services{padding:56px 0;background:var(--bg)}
+.section-head{text-align:center;margin-bottom:26px}
+.section-head h2{margin:0;font-size:26px}
+.section-head p{color:var(--muted);margin-top:8px}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.card{
+  background:#fff;
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(17,17,17,0.06);
+  text-align:left;
+  min-height:170px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.card-icon{font-size:28px;color:var(--red)}
+.contact-card{background:linear-gradient(180deg,#f7fff8,#e6f3ea)}
+
+/* page-head / lists */
+.page-head{padding:40px 0 8px}
+.service-detail{margin-bottom:12px;padding:18px;border-radius:8px}
+
+/* BOOK / CONTACT / FORMS */
+.book-section{padding:46px 0;background:#fff;text-align:center}
+.book-form{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:12px;
+}
+.book-form input, .book-form textarea{
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  min-width:220px;
+}
+.book-card{
+  background:#fff;
+  padding:28px;
+  border-radius:10px;
+  margin-top:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  text-align:center;
+}
+.muted{color:var(--muted);margin-top:8px}
+
+/* CONTACT GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding:22px 0;
+}
+.contact-grid .card{
+  padding:18px;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+.site-footer{
+  background:#0d1117;
+  color:#cfcfcf;
+  padding:32px 0;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.site-footer h3,h4{color:#fff}
+.footer-links{list-style:none;padding:0;margin:8px 0}
+.footer-links li{margin:6px 0}
+.footer-links a{color:#cfcfcf;text-decoration:none}
+.footer-bottom{
+  text-align:center;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,0.03);
+  margin-top:18px;
+}
+
+/* small tweaks */
+a{cursor:pointer}
+.more-link{
+  color:var(--red);
+  text-decoration:none;
+  font-weight:600;
+  margin-top:8px;
+  display:inline-block;
+}
+
+/* RESPONSIVE */
+@media (max-width:1100px){
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:30px}
+  .contact-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:780px){
+  .nav-inner{padding:10px 0;width:90%}
+  .navbar{display:none}
+  .hamburger{display:block}
+  .nav-cta .btn-red{display:none}
+  .mobile-menu{display:none}
+  .hero{min-height:560px;margin-top:0}
+  .service-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .top-inner{padding:8px 0}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .hero h1{font-size:24px}
+  .top-left,.top-center{font-size:13px}
+}
+
+/* =================== REMAINING SECTIONS =================== */
+/* Hero carousel, Why choose us, Laptop service, Section Dark, Steps, etc. */
+/* Keep all your previous stylings here exactly as you provided in the last CSS */
+
+
+ /* Services page specific overrides */
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .service-detail {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-detail:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .service-detail h3 {
+      margin-bottom: 10px;
+      color: #e2231a; /* Lenovo red accent */
+    }
+
+    .page-head {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .page-head h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .page-head p {
+      color: #6b6f76;
+      font-size: 1rem;
+    }
+
+    /* WHY CHOOSE US SECTION */
+.why-choose-us {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.why-choose-us .section-head h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.why-choose-us .section-head p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.why-choose-us .card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hero Carousel */
+.hero {
+  position: relative;
+  height: 600px; /* fixed height for better alignment */
+  overflow: hidden;
+}
+
+/* Each slide */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center; /* horizontally center content */
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Background image */
+.hero-slide img.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative; /* relative to slide */
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.hero-content .eyebrow {
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #e2231a;
+}
+
+/* Carousel arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  color: #fff;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.carousel-arrow.prev {
+  left: 20px;
+}
+
+.carousel-arrow.next {
+  right: 20px;
+}
+
+/* Carousel dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-dots .dot.active {
+  background: #e2231a; /* Lenovo red */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: 500px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+  .carousel-arrow {
+    font-size: 28px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 400px;
+  }
+  .hero-content h1 {
+    font-size: 22px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+}
+
+/* this css is for service processing*/
+
+/* Section Dark with Background */
+/* Section Dark with Background - Adjusted */
+.section-dark {
+  position: relative;
+  width: 100%;
+  padding: 80px 0; /* reduced padding */
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Background image behind */
+.section-dark .jarallax-img {
+  position: absolute;
+  top: 0;
+  left:0%;
+  transform: translateX(-50%);
+  width: 120%; /* slightly larger to cover wider layouts */
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Overlay for better text readability */
+.section-dark .sw-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* Section header */
+.section-dark .subtitle {
+  font-size: 18px;
+  color: #e2231a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  z-index: 3;
+  position: relative;
+}
+
+.section-dark h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  z-index: 3;
+  position: relative;
+}
+
+/* Steps container - horizontal for more space */
+.de-step-s1 {
+  position: relative;
+  padding: 20px 15px;
+  z-index: 3;
+}
+
+/* Step number bubble */
+.d-number {
+  display: inline-block;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  background-color: #e2231a;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Large background number */
+.de-step-s1 .abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px; /* reduced */
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Step title */
+.de-step-s1 h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+  z-index: 3;
+  position: relative;
+}
+
+/* Responsive grid: allow two rows if needed */
+@media (min-width: 992px) {
+  .section-dark .row.grid-divider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .de-step-s1 {
+    flex: 1 1 18%; /* use horizontal width to fit all steps nicely */
+    max-width: 220px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .de-step-s1 {
+    flex: 1 1 45%; /* 2 steps per row */
+    max-width: 300px;
+  }
+
+  .section-dark h2 {
+    font-size: 28px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .de-step-s1 {
+    flex: 1 1 100%; /* stack vertically */
+    max-width: 100%;
+  }
+
+  .section-dark h2 {
+    font-size: 24px;
+  }
+}
+
+
+
+/* Laptop Service Section */
+.laptop-service {
+  padding: 3rem 1.5rem;
+  background-color: #f9fafb; /* Light gray background */
+  font-family: Arial, sans-serif;
+}
+
+.laptop-service .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media(min-width: 768px) {
+  .laptop-service .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Left content */
+.laptop-service h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.laptop-service h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #dc2626; /* Red color */
+  margin-bottom: 1.5rem;
+}
+
+.laptop-service ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.laptop-service ul li {
+  margin-bottom: 0.5rem;
+  color: #374151; /* Gray text */
+  line-height: 1.6;
+}
+
+.laptop-service ul li::before {
+  content: "✔";
+  color: #16a34a; /* Green checkmark */
+  margin-right: 0.5rem;
+}
+
+/* Right contact form */
+.laptop-service form {
+  background-color: #ffffff;
+  border: 2px solid #dc2626; /* Red border */
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.laptop-service form h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.laptop-service input,
+.laptop-service select,
+.laptop-service textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db; /* Gray border */
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.laptop-service textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.laptop-service .flex {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.laptop-service button {
+  width: 100%;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.laptop-service button:hover {
+  background-color: #b91c1c;
+}
+
+.top-header,
+.main-header,
+.hero-section,
+.hero {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero {
+  position: relative;
+  top: 0;
+}
+
+/* Sometimes sticky headers create a layout gap if previous sibling has flow space */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: adjust hero overlap slightly to hide 1–2px ghost lines */
+.hero {
+  margin-top: -1px; /* hides thin white lines that appear on some browsers */
+}
+
+/*cursor animation*/
+.cursor-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-inner {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+
+
