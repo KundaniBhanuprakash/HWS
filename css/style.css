@@ -1126,5 +1126,74 @@ body {
   border-radius: 50%;
 }
 
+/*This is welcome sections styling*/
+
+.welcome-section {
+  padding: 50px 6%;
+  background: #fff;
+}
+
+.welcome-container {
+  border: 2px solid #e2231a;
+  border-radius: 5px;
+  padding: 40px;
+  background: #fff;
+}
+
+.welcome-container h2 {
+  text-align: center;
+  color: #0d1117;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.welcome-container h2::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 50px;
+  height: 4px;
+  background: #e2231a;
+  border-radius: 2px;
+}
+
+.welcome-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.welcome-text {
+  flex: 1 1 60%;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.welcome-image {
+  flex: 1 1 35%;
+  text-align: center;
+  margin-top: 20%; 
+}
+
+.welcome-image img {
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+  }
+  .welcome-image {
+    margin-top: 20px;
+  }
+}
 
 
