@@ -1,0 +1,73 @@
+/* ✅ Base layout for zig-zag sections */
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: nowrap;
+}
+
+/* ✅ Alternate layout (image and text swapped) */
+.welcome-section.alternate .welcome-content {
+  flex-direction: row-reverse !important;
+}
+
+/* ✅ Image styling and positioning */
+.welcome-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-25px); /* lift image upward slightly */
+}
+
+.welcome-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Text area formatting */
+.welcome-text {
+  flex: 1;
+  line-height: 1.8;
+}
+
+/* ✅ Section spacing */
+.welcome-section {
+  padding: 70px 8%;
+  margin-top: 70px;
+  background-color: #fff;
+}
+
+/* ✅ Responsive behavior */
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column !important;
+  }
+
+  .welcome-image {
+    transform: translateY(0);
+    margin-top: 20px;
+  }
+
+  .welcome-image img {
+    max-width: 100%;
+  }
+}
+
+.welcome-container {
+  border: 2px solid #e2231a;
+  border-radius: 5px;
+  padding: 40px;
+  background: #fff;
+}
+
