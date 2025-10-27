@@ -135,11 +135,18 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
-//button 
-
-
-
-
-
-//optional for mobile view toggle
+//✅ JavaScript for accordion
+  const faqItems = document.querySelectorAll('.faq-question');
+  faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+      const answer = item.nextElementSibling;
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        item.querySelector('span').textContent = '-';
+      } else {
+        answer.style.maxHeight = 0;
+        item.querySelector('span').textContent = '+';
+      }
+    });
+  });
