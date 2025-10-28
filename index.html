@@ -70,22 +70,22 @@
           <span class="menu-label">Services</span>
           <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
         </div>
-        <ul class="submenu">
-          <li><a href="#">Lenovo Laptop Battery Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Keyboard Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Motherboard Repair</a></li>
-          <li><a href="#">Lenovo Laptop Screen Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
-          <li><a href="#">Lenovo Laptop Charger Replacement</a></li>
-          <li><a href="#">Lenovo Laptop SSD / HDD Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Hinges Fabrication</a></li>
-          <li><a href="#">Lenovo Laptop Panel Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Power Supply Replacement</a></li>
-          <li><a href="#">Lenovo Laptop RAM Replacement</a></li>
-          <li><a href="#">Lenovo Laptop Water Damage Repair</a></li>
-          <li><a href="#">Lenovo Laptop Speakers Not Working Repair</a></li>
-          <li><a href="#">Lenovo Laptop Windows OS Update & Installation</a></li>
-        </ul>
+       <ul class="submenu">
+  <li><a href="submenu/battery-replacement.html">Lenovo Laptop Battery Replacement</a></li>
+  <li><a href="submenu/keyboard-replacement.html">Lenovo Laptop Keyboard Replacement</a></li>
+  <li><a href="submenu/motherboard-repair.html">Lenovo Laptop Motherboard Repair</a></li>
+  <li><a href="submenu/screen-replacement.html">Lenovo Laptop Screen Replacement</a></li>
+  <li><a href="submenu/camera-wifi-bluetooth-mic-repair.html">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+  <li><a href="submenu/charger-replacement.html">Lenovo Laptop Charger Replacement</a></li>
+  <li><a href="submenu/ssd-hdd-replacement.html">Lenovo Laptop SSD / HDD Replacement</a></li>
+  <li><a href="submenu/hinges-fabrication.html">Lenovo Laptop Hinges Fabrication</a></li>
+  <li><a href="submenu/panel-replacement.html">Lenovo Laptop Panel Replacement</a></li>
+  <li><a href="submenu/power-supply-replacement.html">Lenovo Laptop Power Supply Replacement</a></li>
+  <li><a href="submenu/ram-replacement.html">Lenovo Laptop RAM Replacement</a></li>
+  <li><a href="submenu/water-damage-repair.html">Lenovo Laptop Water Damage Repair</a></li>
+  <li><a href="submenu/speakers-repair.html">Lenovo Laptop Speakers Not Working Repair</a></li>
+  <li><a href="submenu/windows-os-installation.html">Lenovo Laptop Windows OS Update & Installation</a></li>
+</ul>
       </li>
 
       <li class="menu-item"><a href="book-repair.html">Book a Repair</a></li>
@@ -830,75 +830,7 @@
   
 <!-- All your content above -->
 <script>
-  AOS.init({ duration: 700, once: true });
-document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.getElementById('menuBtn');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const closeMenu = document.getElementById('closeMenu');
-
-  // Open menu
-  menuBtn.addEventListener('click', () => {
-    menuOverlay.classList.add('active');
-    document.body.classList.add('body-no-scroll'); // prevent background scroll
-  });
-
-  // Close menu
-  closeMenu.addEventListener('click', () => {
-    menuOverlay.classList.remove('active');
-    document.body.classList.remove('body-no-scroll');
-  });
-
-  // Close if clicked outside menu content
-  menuOverlay.addEventListener('click', (e) => {
-    if(e.target === menuOverlay){
-      menuOverlay.classList.remove('active');
-      document.body.classList.remove('body-no-scroll');
-    }
-  });
-
-  // Submenu toggle
-  const toggles = document.querySelectorAll('.submenu-toggle');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const submenu = btn.closest('.menu-dropdown').querySelector('.submenu');
-      submenu.classList.toggle('open');
-      btn.classList.toggle('open'); // rotate arrow
-      e.stopPropagation();
-    });
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const cursorOuter = document.querySelector('.cursor-outer');
-
-  let mouseX = 0, mouseY = 0;
-  let outerX = 0, outerY = 0;
-  const speed = 0.15;
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    // Outer circle moves with lag
-    outerX += (mouseX - outerX) * speed;
-    outerY += (mouseY - outerY) * speed;
-
-    cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px)`;
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-});
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.querySelector('.footer-brand').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+ 
 
 </script>
 

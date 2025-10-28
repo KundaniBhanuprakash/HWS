@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lenovo Service — Book a Repair</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
+
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+ 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <!-- TOP INFO BAR -->
@@ -15,58 +22,86 @@
       <div class="top-inner container">
         <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
         <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
-        <div class="top-right">
-          <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
-        </div>
+       
       </div>
     </div>
 
     <!-- NAVBAR -->
-    <header class="main-header" id="mainHeader" role="navigation">
-      <div class="nav-inner container">
-        <a class="logo" href="index.html"><span class="logo-strong">Lenovo</span></a>
+   <header class="main-header">
+  <div class="nav-inner container">
+    <a class="logo" href="index.html">
+      <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
+    </a>
 
-        <nav class="navbar" id="navbar" aria-label="Main menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="services.html">Services</a></li>
-            <li><a href="book-repair.html">Book a Repair</a></li>
-            <li><a href="track.html">Track My Repair</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <div class="nav-cta">
-          <!-- Menu Button -->
-          <button class="btn btn-red" id="menuBtn">Menu</button>
-        </div>
-      </div>
-    </header>
-
-    <!-- MENU OVERLAY -->
-    <div class="menu-overlay" id="menuOverlay">
-      <div class="menu-content">
-        <h2>Services</h2>
-        <ul>
-          <li>Laptop Repair</li>
-          <li>Battery & Power</li>
-          <li>Hardware Repair</li>
-          <li>OS & Software Support</li>
-        </ul>
-
-        <h2>Contact</h2>
-        <p>Email: support@lenovoservice.example</p>
-        <p>Phone: +1 (555) 123-4567</p>
-        <p>Address: 105 Main St, New York, NY</p>
-
-        <h2>About Us</h2>
-        <p>Lenovo Authorized Service Support providing certified repairs, genuine parts, and excellent service.</p>
-
-        <button class="btn btn-outline" id="closeMenu">Close</button>
-      </div>
+    <div class="nav-cta">
+      <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </section>
+     <div class="top-right">
+          <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
+      </div>
+  </div>
+</header>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-content-wrapper">
+    <!-- Logo on top -->
+    <div class="menu-logo">
+      <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo">
+    </div>
+
+    <!-- Menu List -->
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li class="menu-dropdown">
+        <div class="menu-item-wrapper">
+          <span class="menu-label">Services</span>
+          <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
+        </div>
+        <ul class="submenu">
+          <li><a href="#">Lenovo Laptop Battery Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Keyboard Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Motherboard Repair</a></li>
+          <li><a href="#">Lenovo Laptop Screen Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+          <li><a href="#">Lenovo Laptop Charger Replacement</a></li>
+          <li><a href="#">Lenovo Laptop SSD / HDD Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Hinges Fabrication</a></li>
+          <li><a href="#">Lenovo Laptop Panel Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Power Supply Replacement</a></li>
+          <li><a href="#">Lenovo Laptop RAM Replacement</a></li>
+          <li><a href="#">Lenovo Laptop Water Damage Repair</a></li>
+          <li><a href="#">Lenovo Laptop Speakers Not Working Repair</a></li>
+          <li><a href="#">Lenovo Laptop Windows OS Update & Installation</a></li>
+        </ul>
+      </li>
+
+      <li class="menu-item"><a href="book-repair.html">Book a Repair</a></li>
+      <li class="menu-item"><a href="track.html">Track My Repair</a></li>
+      <li class="menu-item"><a href="blog.html">Blog</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Contact Info -->
+    <div class="menu-contact">
+      <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
+      <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
+      <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
+    </div>
+
+    <!-- Close Button -->
+    <button class="btn-outline" id="closeMenu">Close</button>
+  </div>
+</div>
+</section>
+
 
   <main class="container" style="padding-top:120px;">
     <section class="page-head" data-aos="fade-up">
@@ -112,7 +147,87 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
   <script> AOS.init({ duration:700, once:true }); </script>
+   <script>
+       
+    AOS.init({ duration: 700, once: true });
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeMenu = document.getElementById('closeMenu');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('body-no-scroll'); // prevent background scroll
+  });
+
+  // Close menu
+  closeMenu.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('body-no-scroll');
+  });
+
+  // Close if clicked outside menu content
+  menuOverlay.addEventListener('click', (e) => {
+    if(e.target === menuOverlay){
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('body-no-scroll');
+    }
+  });
+
+  // Submenu toggle
+  const toggles = document.querySelectorAll('.submenu-toggle');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const submenu = btn.closest('.menu-dropdown').querySelector('.submenu');
+      submenu.classList.toggle('open');
+      btn.classList.toggle('open'); // rotate arrow
+      e.stopPropagation();
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cursorOuter = document.querySelector('.cursor-outer');
+
+  let mouseX = 0, mouseY = 0;
+  let outerX = 0, outerY = 0;
+  const speed = 0.15;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    // Outer circle moves with lag
+    outerX += (mouseX - outerX) * speed;
+    outerY += (mouseY - outerY) * speed;
+
+    cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelector('.footer-brand').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+   </script>
+
+   <!-- Custom Cursor -->
+<div class="cursor-outer">
+  <div class="cursor-inner"></div>
+</div>
+
+
 </body>
 </html>

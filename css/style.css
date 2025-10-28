@@ -263,25 +263,36 @@ body {
   transition: transform 0.3s;
 }
 
-.dropdown-btn.active .arrow {
-  transform: rotate(180deg); /* Arrow flips on click */
+.dropdown-btn:hover {
+  color: #e2231a;
+  background-color: rgba(255,255,255,0.05);
 }
 
 
-/* Submenu styling (nested under Services) */
+.dropdown-btn.active .arrow {
+  transform: rotate(180deg);
+}
+
+
+
+
+/* Submenu toggle (small red square button) */
 .submenu-toggle {
-  background-color: var(--red);
+  background-color: #e2231a;
   border: none;
   color: #fff;
-  font-size: 16px;
-  border-radius: 0%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submenu-toggle:hover {
+  background-color: #b91c15;
 }
 
 .submenu-toggle.open {
@@ -293,29 +304,51 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  margin: 5px 0 15px 15px;
+  margin: 5px 0 10px 0;
   list-style: none;
+  background-color: #101418; /* darker background like Lenovo */
+  border-left: 2px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
 }
 
+/* When opened */
 .submenu.open {
   max-height: 1000px;
 }
 
+/* Submenu list items */
 .submenu li {
-  padding: 4px 0;
-  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.submenu li:last-child {
+  border-bottom: none;
 }
 
 .submenu li a {
-  color: #ccc;
+  display: block;
+  color: #ddd;
+  padding: 10px 16px 10px 30px; /* indentation like Lenovo */
+  font-size: 14px;
   text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
+/* Hover & active states */
 .submenu li a:hover {
-  color: var(--red);
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.submenu li a.active {
+  color: #fff;
+  background-color: #1a1f25;
+  border-left: 3px solid #e2231a;
 }
 
 
+/* Dropdown button (Services) style refined */
 .dropdown-btn {
   display: flex;
   justify-content: space-between;
@@ -324,14 +357,18 @@ body {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   line-height: 30px;
-  padding: 5px 0;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s ease;
 }
 
 .dropdown-btn .arrow {
   transition: transform 0.3s ease;
+  font-size: 12px;
 }
 
 

@@ -150,3 +150,87 @@ window.addEventListener('scroll', () => {
       }
     });
   });
+
+
+  //menubar functions 
+
+    AOS.init({ duration: 700, once: true });
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeMenu = document.getElementById('closeMenu');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('body-no-scroll'); // prevent background scroll
+  });
+
+  // Close menu
+  closeMenu.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('body-no-scroll');
+  });
+
+  // Close if clicked outside menu content
+  menuOverlay.addEventListener('click', (e) => {
+    if(e.target === menuOverlay){
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('body-no-scroll');
+    }
+  });
+
+  // Submenu toggle
+  const toggles = document.querySelectorAll('.submenu-toggle');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const submenu = btn.closest('.menu-dropdown').querySelector('.submenu');
+      submenu.classList.toggle('open');
+      btn.classList.toggle('open'); // rotate arrow
+      e.stopPropagation();
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cursorOuter = document.querySelector('.cursor-outer');
+
+  let mouseX = 0, mouseY = 0;
+  let outerX = 0, outerY = 0;
+  const speed = 0.15;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    // Outer circle moves with lag
+    outerX += (mouseX - outerX) * speed;
+    outerY += (mouseY - outerY) * speed;
+
+    cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelector('.footer-brand').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+
+const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+
+dropdownBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    const submenu = btn.nextElementSibling;
+    submenu.classList.toggle('open');
+  });
+});
