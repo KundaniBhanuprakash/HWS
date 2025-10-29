@@ -7,6 +7,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,64 +16,94 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
   <body>
-    <!-- TOP INFO BAR -->
+    <!-- TOP INFO BAR + NAV copied from index.html for consistency -->
     <section class="hero-section">
       <div class="top-header" id="topHeader">
         <div class="top-inner container">
           <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
           <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
-          <div class="top-right">
-            <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
-          </div>
         </div>
       </div>
 
       <!-- NAVBAR -->
-      <header class="main-header" id="mainHeader" role="navigation">
+      <header class="main-header">
         <div class="nav-inner container">
-          <a class="logo" href="index.html"><span class="logo-strong">Lenovo</span></a>
-
-          <nav class="navbar" id="navbar" aria-label="Main menu">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a class="active" href="services.html">Services</a></li>
-              <li><a href="book-repair.html">Book a Repair</a></li>
-              <li><a href="track.html">Track My Repair</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
+          <a class="logo" href="index.html">
+            <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
+          </a>
 
           <div class="nav-cta">
-            <!-- Menu Button -->
-            <button class="btn btn-red" id="menuBtn">Menu</button>
+            <button class="hamburger" id="menuBtn" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
+           <div class="top-right">
+                <a href="book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
+            </div>
         </div>
       </header>
 
       <!-- MENU OVERLAY -->
       <div class="menu-overlay" id="menuOverlay">
-        <div class="menu-content">
-          <h2>Services</h2>
-          <ul>
-            <li>Laptop Repair</li>
-            <li>Battery & Power</li>
-            <li>Hardware Repair</li>
-            <li>OS & Software Support</li>
+        <div class="menu-content-wrapper">
+          <!-- Logo on top -->
+          <div class="menu-logo">
+            <img src="images/Lenovo service support center logo.png" alt="Lenovo Logo">
+          </div>
+
+          <!-- Menu List -->
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="index.html">Home</a>
+            </li>
+
+            <li class="menu-dropdown">
+              <div class="menu-item-wrapper">
+                <span class="menu-label">Services</span>
+                <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
+              </div>
+              <ul class="submenu">
+                <li><a href="submenu/battery-replacement.html">Lenovo Laptop Battery Replacement</a></li>
+                <li><a href="submenu/keyboard-replacement.html">Lenovo Laptop Keyboard Replacement</a></li>
+                <li><a href="submenu/motherboard-repair.html">Lenovo Laptop Motherboard Repair</a></li>
+                <li><a href="submenu/screen-replacement.html">Lenovo Laptop Screen Replacement</a></li>
+                <li><a href="submenu/camera-wifi-bluetooth-repair.html">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+                <li><a href="submenu/charger-replacement.html">Lenovo Laptop Charger Replacement</a></li>
+                <li><a href="submenu/ssd-hdd-replacement.html">Lenovo Laptop SSD / HDD Replacement</a></li>
+                <li><a href="submenu/hinges-fabrication.html">Lenovo Laptop Hinges Fabrication</a></li>
+                <li><a href="submenu/panel-replacement.html">Lenovo Laptop Panel Replacement</a></li>
+                <li><a href="submenu/power-supply-replacement.html">Lenovo Laptop Power Supply Replacement</a></li>
+                <li><a href="submenu/ram-replacement.html">Lenovo Laptop RAM Replacement</a></li>
+                <li><a href="submenu/water-damage-repair.html">Lenovo Laptop Water Damage Repair</a></li>
+                <li><a href="submenu/speakers-repair.html">Lenovo Laptop Speakers Not Working Repair</a></li>
+                <li><a href="submenu/windows-os-installation.html">Lenovo Laptop Windows OS Update & Installation</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item"><a href="book-repair.html">Book a Repair</a></li>
+            <li class="menu-item"><a href="track.html">Track My Repair</a></li>
+            <li class="menu-item"><a href="blog.html">Blog</a></li>
+            <li class="menu-item"><a href="contact.html">Contact</a></li>
           </ul>
 
-          <h2>Contact</h2>
-          <p>Email: support@lenovoservice.example</p>
-          <p>Phone: +1 (555) 123-4567</p>
-          <p>Address: 105 Main St, New York, NY</p>
+          <!-- Contact Info -->
+          <div class="menu-contact">
+            <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
+            <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
+            <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
+          </div>
 
-          <h2>About Us</h2>
-          <p>Lenovo Authorized Service Support providing certified repairs, genuine parts, and excellent service.</p>
-
-          <button class="btn btn-outline" id="closeMenu">Close</button>
+          <!-- Close Button -->
+          <button class="btn-outline" id="closeMenu">Close</button>
         </div>
       </div>
-  </section>
+    </section>
+
+    <!-- HERO copied from index.html -->
+    <!-- End of Selection -->
+```
 
   <!-- SERVICES SECTION -->
   <section id="services" class="services" data-aos="fade-up">
@@ -151,66 +182,72 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="contact" class="site-footer" data-aos="fade-up">
-    <div class="container footer-grid">
-      <div>
-        <h3>Lenovo Service Support</h3>
-        <p>105 Main St, New York, NY<br>Mon - Sat: 08:00 - 18:00</p>
-      </div>
+  <!-- FOOTER copied from index.html -->
+  <footer class="lenovo-footer" id="footer">
+    <div class="footer-wrapper">
+      
+      <!-- Left Column -->
+      <div class="footer-column about">
+        <div class="footer-logo-box">
+          <img src="images/Lenovo service support center logo.png" alt="Lenovo" class="lenovo-logo">
+        </div>
+        <p>
+          Welcome to Lenovo laptop repair service center in Telangana, we specialize in affordable and
+          high-quality Lenovo laptop spare parts at Wholesale price. We repair and replace Lenovo all
+          model genuine accessories. No matter the issue, our team of expert Lenovo qualified
+          technicians is here to provide you with quick, efficient, and reliable solutions.
+        </p>
 
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="book-repair.html">Book a Repair</a></li>
-          <li><a href="track.html">Track My Repair</a></li>
-          <li><a href="blog.html">Blog</a></li>
+        <h2>Our Services</h2>
+        <ul class="footer-list">
+          <li>Lenovo Laptop Battery Replacement</li>
+          <li>Lenovo Laptop Keyboard Replacement</li>
+          <li>Lenovo Laptop Hinge Replacement</li>
+          <li>Lenovo Laptop Motherboard Repair</li>
+          <li>Lenovo Laptop Screen Replace</li>
+          <li>Lenovo Laptop SSD Replace</li>
         </ul>
       </div>
 
-      <div>
-        <h4>Contact</h4>
-        <p>Email: support@lenovoservice.example<br>Phone: +1 (555) 123-4567</p>
+      <!-- Middle Column (Quick Links + Accessories) -->
+      <div class="footer-column links">
+        <h2>Quick Links</h2>
+        <ul class="footer-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="branches.html">Branches</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <h2>Accessories</h2>
+        <ul class="footer-list">
+          <li>Lenovo Laptop Battery</li>
+          <li>Lenovo Laptop Charger</li>
+          <li>Lenovo Laptop Hinges</li>
+          <li>Lenovo Laptop Keyboard</li>
+          <li>Lenovo Laptop Motherboard</li>
+        </ul>
       </div>
     </div>
 
+    <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p>© <span id="yearServices"></span> Lenovo Authorized Service Support. All rights reserved.</p>
+      <p>© <span id="year"></span> Copyright By 
+        <a href="#top" class="footer-brand">Lenovo Service Support Center</a>. All Rights Reserved.
+      </p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
-  <script> 
-    AOS.init({ duration: 700, once: true }); 
-
-    // MENU toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const closeMenu = document.getElementById('closeMenu');
-
-    menuBtn.addEventListener('click', () => {
-      menuOverlay.classList.add('open');
-    });
-
-    closeMenu.addEventListener('click', () => {
-      menuOverlay.classList.remove('open');
-    });
-
-    menuOverlay.addEventListener('click', (e) => {
-      if (e.target === menuOverlay) menuOverlay.classList.remove('open');
-    });
-
-    // Footer year
-    document.getElementById('yearServices').textContent = new Date().getFullYear();
-  </script>
 
   <!-- Custom Cursor -->
-<div class="cursor-outer">
-  <div class="cursor-inner"></div>
-</div>
+  <div class="cursor-outer">
+    <div class="cursor-inner"></div>
+  </div>
 
 </body>
 </html>

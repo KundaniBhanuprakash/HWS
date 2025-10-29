@@ -66,74 +66,77 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.carousel-arrow.prev');
-const nextBtn = document.querySelector('.carousel-arrow.next');
-let currentSlide = 0;
-let slideInterval;
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.carousel-arrow.prev');
+  const nextBtn = document.querySelector('.carousel-arrow.next');
+  if (!slides || slides.length === 0 || !dots || dots.length === 0 || !prevBtn || !nextBtn) return;
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  dots.forEach(dot => dot.classList.remove('active'));
+  let currentSlide = 0;
+  let slideInterval;
 
-  slides[index].classList.add('active');
-  dots[index].classList.add('active');
-  currentSlide = index;
-}
+  const showSlide = (index) => {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  };
 
-function nextSlide() {
-  showSlide((currentSlide + 1) % slides.length);
-}
+  const nextSlide = () => {
+    showSlide((currentSlide + 1) % slides.length);
+  };
 
-function prevSlide() {
-  showSlide((currentSlide - 1 + slides.length) % slides.length);
-}
+  const prevSlideFn = () => {
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  };
 
-// Auto-slide every 5 seconds
-slideInterval = setInterval(nextSlide, 5000);
-
-// Dot click event
-dots.forEach(dot => {
-  dot.addEventListener('click', () => {
-    showSlide(parseInt(dot.dataset.slide));
-    resetInterval();
-  });
-});
-
-// Arrow click events
-nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
-prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
-
-function resetInterval() {
-  clearInterval(slideInterval);
+  // Auto-slide every 5 seconds
   slideInterval = setInterval(nextSlide, 5000);
-}
+
+  // Dot click event
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showSlide(parseInt(dot.dataset.slide));
+      resetInterval();
+    });
+  });
+
+  // Arrow click events
+  nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+  prevBtn.addEventListener('click', () => { prevSlideFn(); resetInterval(); });
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+})();
 
 //this script is for img scrolling
-const jarallaxImg = document.querySelector('.section-dark .jarallax-img');
-let latestScrollY = 0;
-let ticking = false;
-
-window.addEventListener('scroll', () => {
-  latestScrollY = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const sectionOffset = jarallaxImg.parentElement.offsetTop;
-      const sectionHeight = jarallaxImg.parentElement.offsetHeight;
-
-      if (latestScrollY + window.innerHeight > sectionOffset && latestScrollY < sectionOffset + sectionHeight) {
-        const relativeY = (latestScrollY - sectionOffset) * 0.4; // slower parallax effect
-        jarallaxImg.style.transform = `translateY(${relativeY}px)`;
-      }
-
-      ticking = false;
-    });
-
-    ticking = true;
-  }
-});
+(function(){
+  const jarallaxImg = document.querySelector('.section-dark .jarallax-img');
+  if (!jarallaxImg) return;
+  let latestScrollY = 0;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    latestScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const parent = jarallaxImg.parentElement;
+        if (!parent) return;
+        const sectionOffset = parent.offsetTop;
+        const sectionHeight = parent.offsetHeight;
+        if (latestScrollY + window.innerHeight > sectionOffset && latestScrollY < sectionOffset + sectionHeight) {
+          const relativeY = (latestScrollY - sectionOffset) * 0.4;
+          jarallaxImg.style.transform = `translateY(${relativeY}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
 
 //✅ JavaScript for accordion
   const faqItems = document.querySelectorAll('.faq-question');
@@ -218,11 +221,15 @@ document.addEventListener('DOMContentLoaded', () => {
   animate();
 });
 
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.querySelector('.footer-brand').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const footerBrand = document.querySelector('.footer-brand');
+  if (footerBrand) {
+    footerBrand.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 
 const dropdownBtns = document.querySelectorAll('.dropdown-btn');
@@ -233,4 +240,67 @@ dropdownBtns.forEach(btn => {
     const submenu = btn.nextElementSibling;
     submenu.classList.toggle('open');
   });
+});
+
+// Skills progress bars: animate on view, one-by-one from 0% to target
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsSection = document.querySelector('.skills-section');
+  if (!skillsSection) return;
+
+  const bars = Array.from(skillsSection.querySelectorAll('.skill-bar .progress'));
+  if (bars.length === 0) return;
+
+  // Ensure each bar starts at 0 and has a numeric label element
+  bars.forEach(bar => {
+    bar.style.width = '0%';
+    let percentEl = bar.querySelector('.percent');
+    if (!percentEl) {
+      percentEl = document.createElement('span');
+      percentEl.className = 'percent';
+      percentEl.textContent = '0%';
+      bar.appendChild(percentEl);
+    } else {
+      percentEl.textContent = '0%';
+    }
+  });
+
+  let hasAnimated = false;
+
+  const animateBar = (bar, target, duration = 1200) => new Promise(resolve => {
+    const start = performance.now();
+    const percentEl = bar.querySelector('.percent');
+    const tick = (now) => {
+      const elapsed = now - start;
+      const t = Math.min(1, elapsed / duration);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      const current = Math.round(eased * target);
+      bar.style.width = current + '%';
+      if (percentEl) percentEl.textContent = current + '%';
+      if (t < 1) requestAnimationFrame(tick); else resolve();
+    };
+    requestAnimationFrame(tick);
+  });
+
+  const animateSequentially = async () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+    for (const bar of bars) {
+      const target = Math.min(100, Math.max(0, parseInt(bar.getAttribute('data-progress') || '100', 10)));
+      await animateBar(bar, target, 1200);
+      // small gap between bars
+      await new Promise(r => setTimeout(r, 200));
+    }
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSequentially();
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(skillsSection);
 });
