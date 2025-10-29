@@ -10,13 +10,106 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="main-header">
-    <div class="nav-inner container">
-      <a class="logo" href="../index.html">
-        <img src="../images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
-      </a>
+  <section class="hero-section">
+    <div class="top-header" id="topHeader">
+      <div class="top-inner container">
+        <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
+        <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
+      </div>
     </div>
-  </header>
+
+    <header class="main-header">
+      <div class="nav-inner container">
+        <a class="logo" href="../index.html">
+          <img src="../images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
+        </a>
+
+        <div class="nav-cta">
+          <button class="hamburger" id="menuBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+         <div class="top-right">
+              <a href="../book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
+          </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-content-wrapper">
+        <div class="menu-logo">
+          <img src="../images/Lenovo service support center logo.png" alt="Lenovo Logo">
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="../index.html">Home</a>
+          </li>
+
+          <li class="menu-dropdown">
+            <div class="menu-item-wrapper">
+              <span class="menu-label">Services</span>
+              <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
+            </div>
+            <ul class="submenu">
+              <li><a href="../submenu/battery-replacement.html">Lenovo Laptop Battery Replacement</a></li>
+              <li><a href="../submenu/keyboard-replacement.html">Lenovo Laptop Keyboard Replacement</a></li>
+              <li><a href="../submenu/motherboard-repair.html">Lenovo Laptop Motherboard Repair</a></li>
+              <li><a href="../submenu/screen-replacement.html">Lenovo Laptop Screen Replacement</a></li>
+              <li><a href="../submenu/camera-wifi-bluetooth-mic-repair.html">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+              <li><a href="../submenu/charger-replacement.html">Lenovo Laptop Charger Replacement</a></li>
+              <li><a href="../submenu/ssd-hdd-replacement.html">Lenovo Laptop SSD / HDD Replacement</a></li>
+              <li><a href="../submenu/hinges-fabrication.html">Lenovo Laptop Hinges Fabrication</a></li>
+              <li><a href="../submenu/panel-replacement.html">Lenovo Laptop Panel Replacement</a></li>
+              <li><a href="../submenu/power-supply-replacement.html">Lenovo Laptop Power Supply Replacement</a></li>
+              <li><a href="../submenu/ram-replacement.html">Lenovo Laptop RAM Replacement</a></li>
+              <li><a href="../submenu/water-damage-repair.html">Lenovo Laptop Water Damage Repair</a></li>
+              <li><a href="../submenu/speakers-repair.html">Lenovo Laptop Speakers Not Working Repair</a></li>
+              <li><a href="../submenu/windows-os-installation.html">Lenovo Laptop Windows OS Update & Installation</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-dropdown">
+            <div class="menu-item-wrapper">
+              <span class="menu-label">Accessories</span>
+              <button class="submenu-toggle" aria-label="Toggle Accessories submenu">▾</button>
+            </div>
+            <ul class="submenu">
+              <li><a href="battery.html">Lenovo Laptop Battery</a></li>
+              <li><a href="camera.html">Lenovo Laptop Camera</a></li>
+              <li><a href="charger.html">Lenovo Laptop Charger</a></li>
+              <li><a href="display-cable.html">Lenovo Laptop Display Cable</a></li>
+              <li><a href="fan.html">Lenovo Laptop Fan</a></li>
+              <li><a href="hinges.html">Lenovo Laptop Hinges</a></li>
+              <li><a href="keyboard.html">Lenovo Laptop Keyboard</a></li>
+              <li><a href="motherboard.html">Lenovo Laptop Motherboard</a></li>
+              <li><a href="panel.html">Lenovo Laptop Panel</a></li>
+              <li><a href="power-supply.html">Lenovo Laptop Power Supply</a></li>
+              <li><a href="ram.html">Lenovo Laptop RAM</a></li>
+              <li><a href="screen.html">Lenovo Laptop Screen</a></li>
+              <li><a href="speaker.html">Lenovo Laptop Speaker</a></li>
+              <li><a href="ssd-hdd.html">Lenovo Laptop SSD or HDD</a></li>
+              <li><a href="touchpad.html">Lenovo Laptop Touchpad</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-item"><a href="../track.html">Track My Repair</a></li>
+          <li class="menu-item"><a href="../blog.html">Blog</a></li>
+          <li class="menu-item"><a href="../contact.html">Contact</a></li>
+        </ul>
+
+        <div class="menu-contact">
+          <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
+          <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
+          <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
+        </div>
+
+        <button class="btn-outline" id="closeMenu">Close</button>
+      </div>
+    </div>
+  </section>
 
   <section class="page-hero" data-aos="fade-up">
     <div class="container">
@@ -32,9 +125,52 @@
     </div>
   </section>
 
-  <footer class="lenovo-footer">
+  <footer class="lenovo-footer" id="footer">
+    <div class="footer-wrapper">
+      <div class="footer-column about">
+        <div class="footer-logo-box">
+          <img src="../images/Lenovo service support center logo.png" alt="Lenovo" class="lenovo-logo">
+        </div>
+        <p>
+          Welcome to Lenovo laptop repair service center in Telangana, we specialize in affordable and
+          high-quality Lenovo laptop spare parts at Wholesale price. We repair and replace Lenovo all
+          model genuine accessories. No matter the issue, our team of expert Lenovo qualified
+          technicians is here to provide you with quick, efficient, and reliable solutions.
+        </p>
+        <h2>Our Services</h2>
+        <ul class="footer-list">
+          <li>Lenovo Laptop Battery Replacement</li>
+          <li>Lenovo Laptop Keyboard Replacement</li>
+          <li>Lenovo Laptop Hinge Replacement</li>
+          <li>Lenovo Laptop Motherboard Repair</li>
+          <li>Lenovo Laptop Screen Replace</li>
+          <li>Lenovo Laptop SSD Replace</li>
+        </ul>
+      </div>
+      <div class="footer-column links">
+        <h2>Quick Links</h2>
+        <ul class="footer-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../accessories.html">Accessories</a></li>
+          <li><a href="../branches.html">Branches</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
+        <h2>Accessories</h2>
+        <ul class="footer-list">
+          <li>Lenovo Laptop Battery</li>
+          <li>Lenovo Laptop Charger</li>
+          <li>Lenovo Laptop Hinges</li>
+          <li>Lenovo Laptop Keyboard</li>
+          <li>Lenovo Laptop Motherboard</li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-bottom">
-      <p>© <span id="year"></span> Lenovo Service Support Center</p>
+      <p>© <span id="year"></span> Copyright By 
+        <a href="#top" class="footer-brand">Lenovo Service Support Center</a>. All Rights Reserved.
+      </p>
     </div>
   </footer>
 

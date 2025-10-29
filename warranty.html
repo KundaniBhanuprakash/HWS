@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lenovo Warranty Lookup — Official Support</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/warranty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Top bar similar to Lenovo Warranty page -->
+  <section class="hero-section">
+    <div class="top-header" id="topHeader">
+      <div class="top-inner container" style="justify-content:space-between;">
+        <div class="top-left" style="display:flex;align-items:center;gap:16px;">
+          <a class="logo" href="index.html" style="display:flex;align-items:center;gap:8px;">
+            <img src="images/Lenovo service support center logo.png" alt="Lenovo" class="site-logo" style="height:34px;">
+          </a>
+          <nav class="warranty-topnav" style="display:flex;gap:18px;">
+            <a href="https://www.lenovo.com/" target="_blank" rel="noopener">SHOP</a>
+            <a href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">SUPPORT</a>
+          </nav>
+        </div>
+        <div class="top-right" style="display:flex;align-items:center;gap:12px;">
+          <a class="btn btn-small" href="https://account.lenovo.com/" target="_blank" rel="noopener">My Account</a>
+          <a href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener" aria-label="Region">English ▾</a>
+          <a href="https://www.lenovo.com/" target="_blank" rel="noopener" aria-label="Cart">Cart ▾</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <header class="main-header">
+      <div class="nav-inner container" style="justify-content:flex-start;">
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="font-size:.95rem;opacity:.9;">
+          <a href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">PC Support</a>
+          <span> > </span>
+          <span>Warranty Lookup</span>
+        </nav>
+      </div>
+    </header>
+  </section>
+
+  <!-- Hero -->
+  <section id="warranty-hero" class="hero simple-hero" data-aos="fade-up">
+    <div class="container">
+      <div class="section-head">
+        <h1>Lenovo Warranty Lookup</h1>
+        <p>Check your Lenovo device warranty status, coverage dates, and service options.</p>
+      </div>
+      <div class="hero-actions" style="margin-top:16px;">
+        <a class="btn btn-primary" href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener">Open Official Warranty Page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookup form (local UI, opens Lenovo portal) -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-head">
+        <h2>Check Warranty Status</h2>
+        <p>Search by Serial Number for the most accurate results.</p>
+      </div>
+      <div class="track-inner" style="gap:12px;">
+        <input type="text" id="snLookup" placeholder="Enter Serial Number (S/N)" />
+        <button class="btn btn-red" id="btnLookup">Check Warranty</button>
+      </div>
+      <div id="lookupNote" style="margin-top:8px; opacity:.8; font-size:.95rem;">We’ll redirect you to Lenovo’s official warranty portal with your details.</div>
+    </div>
+  </section>
+
+  <!-- Alternate methods -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <div class="cards-grid">
+        <article class="card" data-aos="fade-up" data-aos-delay="60">
+          <h3>Auto-Detect</h3>
+          <p>Use Lenovo’s auto-detect tool to identify your product automatically on the official site.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener">Try Auto-Detect →</a>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Browse by Product</h3>
+          <p>Find your device by selecting product family and model from Lenovo’s database.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener">Browse Products →</a>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Sign In</h3>
+          <p>View coverage for devices in your Lenovo ID account and manage support easily.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener">Sign In →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Region / Country selector -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-head">
+        <h2>Select Your Region</h2>
+        <p>For localized support, choose your country or region on Lenovo’s portal.</p>
+      </div>
+      <div class="track-inner" style="gap:12px;">
+        <select id="regionSelect" aria-label="Choose region">
+          <option value="in">India</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="de">Germany</option>
+          <option value="fr">France</option>
+          <option value="cn">China</option>
+          <option value="jp">Japan</option>
+          <option value="au">Australia</option>
+        </select>
+        <button class="btn btn-outline" id="btnRegion">Open Regional Page</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support resources (similar to support sections in Lenovo) -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <div class="cards-grid">
+        <article class="card" data-aos="fade-up" data-aos-delay="60">
+          <h3>Drivers & Software</h3>
+          <p>Get the latest drivers, firmware, and software for your Lenovo device.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">Open Drivers →</a>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Guides & Manuals</h3>
+          <p>Access user guides, hardware maintenance manuals, and how‑to resources.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">View Manuals →</a>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Repair Status Check</h3>
+          <p>Already submitted a device for repair? Check official status and updates.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">Check Status →</a>
+        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="240">
+          <h3>Contact Support</h3>
+          <p>Find regional support numbers, chat, and service center information.</p>
+          <a class="more-link" href="https://pcsupport.lenovo.com/" target="_blank" rel="noopener">Contact →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works / Instructions -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <div class="cards-grid">
+        <article class="card" data-aos="fade-up" data-aos-delay="50">
+          <h3>What You’ll Need</h3>
+          <p>Have one of the following ready:</p>
+          <ul class="list">
+            <li>Device Serial Number (S/N)</li>
+            <li>Or select your product family and model manually</li>
+          </ul>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
+          <h3>Steps</h3>
+          <ol class="list">
+            <li>Click “Open Official Warranty Page”.</li>
+            <li>Enter your Serial Number (or browse by product).</li>
+            <li>View warranty start/end dates and service level.</li>
+          </ol>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="180">
+          <h3>Why Use Lenovo Warranty Lookup?</h3>
+          <ul class="list">
+            <li>Accurate, official coverage information</li>
+            <li>Service and repair eligibility</li>
+            <li>Support options and parts availability</li>
+          </ul>
+        </article>
+      </div>
+
+      <div style="margin-top:24px;">
+        <a class="btn btn-outline" href="https://pcsupport.lenovo.com/in/en/warranty-lookup#/" target="_blank" rel="noopener">Go to Lenovo Warranty Lookup</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer / Note -->
+  <section class="content-section" data-aos="fade-up">
+    <div class="container">
+      <p style="opacity:.85;">This page links to Lenovo’s official warranty portal. For the most accurate and up-to-date information, always verify directly on Lenovo’s site.</p>
+    </div>
+  </section>
+
+  <!-- Footer (Lenovo-like support footer) -->
+  <footer class="warranty-footer">
+    <div class="container">
+      <div class="wf-grid">
+        <div class="wf-col">
+          <h4>About Lenovo</h4>
+          <ul>
+            <li><a href="#">Our Company</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Product Compliance</a></li>
+            <li><a href="#">Product Security</a></li>
+            <li><a href="#">Lenovo Open Source</a></li>
+            <li><a href="#">Legal Information</a></li>
+            <li><a href="#">Jobs at Lenovo</a></li>
+          </ul>
+        </div>
+
+        <div class="wf-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Laptops & Ultrabooks</a></li>
+            <li><a href="#">Tablets</a></li>
+            <li><a href="#">Desktops & All-in-Ones</a></li>
+            <li><a href="#">Workstations</a></li>
+            <li><a href="#">Accessories & Software</a></li>
+            <li><a href="#">Servers</a></li>
+            <li><a href="#">Storage</a></li>
+            <li><a href="#">Networking</a></li>
+            <li><a href="#">Laptop Deals</a></li>
+            <li><a href="#">Outlet</a></li>
+          </ul>
+        </div>
+
+        <div class="wf-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Drivers & Software</a></li>
+            <li><a href="#">Documentation Center</a></li>
+            <li><a href="#">Troubleshoot & Diagnose</a></li>
+            <li><a href="#">How To's</a></li>
+            <li><a href="#">Guides & Manuals</a></li>
+            <li><a href="#">Warranty Lookup</a></li>
+            <li><a href="#">Parts Lookup</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Repair Status Check</a></li>
+            <li><a href="#">Imaging & Security Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="wf-col small-col" style="font-size: 0.92em; margin-right: 12px; min-width: 150px;">
+          <h4 style="font-size:1.05em;">Resources</h4>
+          <ul style="margin-bottom: 8px;">
+            <li><a href="#">Where to Buy</a></li>
+            <li><a href="#">Shopping Help</a></li>
+            <li><a href="#">Track Order Status</a></li>
+            <li><a href="#">Product Specifications (PSREF)</a></li>
+            <li><a href="#">Forums</a></li>
+            <li><a href="#">Registration</a></li>
+            <li><a href="#">Product Accessibility</a></li>
+            <li><a href="#">Environmental Information</a></li>
+            <li><a href="#">Gaming Community</a></li>
+            <li><a href="#">LenovoEDU Community</a></li>
+            <li><a href="#">LenovoPRO Community</a></li>
+          </ul>
+        </div>
+
+        <div class="wf-col small-col" style="font-size: 0.92em; margin-right: 0; min-width: 150px;">
+          <h4 style="font-size:1.05em;">Stay in touch</h4>
+          <ul class="social-icons" style="margin-bottom: 8px;">
+            <li><a class="icon fb" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a class="icon x" href="#" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a></li>
+            <li><a class="icon yt" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+            <li><a class="icon pt" href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a></li>
+          </ul>
+          <div class="env" style="font-size:0.95em;">
+            <div class="env-title" style="font-size:1em;"><i class="fas fa-recycle" style="color:#39a935;margin-right:6px;"></i>Our commitment to the environment</div>
+            <a href="#" class="more-link">See our Sustainability Report.</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-bottom">
+        <div class="copy">© <span id="year"></span> Lenovo Service Support Center</div>
+        <ul class="legal">
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Cookie Consent Tool</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Site Map</a></li>
+          <li><a href="#">Browser Compatibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Redirect to Lenovo with SN hint
+    (function(){
+      const btn = document.getElementById('btnLookup');
+      if(btn){
+        btn.addEventListener('click', function(){
+          const sn = (document.getElementById('snLookup') || {}).value || '';
+          const url = 'https://pcsupport.lenovo.com/in/en/warranty-lookup#/' + (sn ? ('?sn=' + encodeURIComponent(sn)) : '');
+          window.open(url, '_blank', 'noopener');
+        });
+      }
+      const btnRegion = document.getElementById('btnRegion');
+      if(btnRegion){
+        btnRegion.addEventListener('click', function(){
+          const region = (document.getElementById('regionSelect') || {}).value || 'in';
+          const map = { in:'in/en', us:'us/en', uk:'gb/en', de:'de/de', fr:'fr/fr', cn:'cn/zh', jp:'jp/ja', au:'au/en' };
+          const loc = map[region] || 'in/en';
+          const url = 'https://pcsupport.lenovo.com/' + loc + '/warranty-lookup#/';
+          window.open(url, '_blank', 'noopener');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

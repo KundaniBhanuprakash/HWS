@@ -1,0 +1,143 @@
+/* Warranty page specific styling to mimic Lenovo warranty header and layout */
+
+/* Top header bar */
+.hero-section .top-header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.hero-section .top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+}
+.hero-section .site-logo {
+  height: 34px;
+}
+.warranty-topnav a {
+  color: #111;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.warranty-topnav a:hover { color: #cc0000; }
+
+.top-right a { color: #111; }
+.top-right .btn.btn-small {
+  padding: 6px 10px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+}
+
+/* Breadcrumb bar */
+.main-header .nav-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.breadcrumb { color: #555; }
+.breadcrumb a { color: #0062ff; }
+.breadcrumb span { margin: 0 6px; }
+
+/* Hero */
+.simple-hero {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #f7f7f7;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.simple-hero .section-head h1 { margin-bottom: 6px; }
+.simple-hero .hero-actions .btn.btn-primary {
+  background: #0062ff;
+  border-color: #0062ff;
+}
+
+/* Lookup form */
+#snLookup {
+  flex: 1 1 420px;
+  max-width: 520px;
+  height: 44px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  padding: 0 14px;
+}
+#btnLookup {
+  height: 44px;
+  padding: 0 18px;
+}
+.track-inner {
+  display: flex;
+  align-items: center;
+}
+
+/* Cards grid spacing similar to support site */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+.cards-grid .card {
+  grid-column: span 12;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+@media (min-width: 768px){
+  .cards-grid .card { grid-column: span 6; }
+}
+@media (min-width: 1024px){
+  .cards-grid .card { grid-column: span 3; }
+}
+
+/* Region selector */
+#regionSelect { height: 40px; padding: 0 10px; border: 1px solid #cfcfcf; border-radius: 6px; }
+#btnRegion { height: 40px; }
+
+/* Footer minimal */
+.lenovo-footer .footer-bottom {
+  border-top: 1px solid #e6e6e6;
+}
+
+/* Warranty footer */
+.warranty-footer { background:#fff; border-top:1px solid #e6e6e6; }
+.warranty-footer .container { padding: 14px 12px; max-width: 1180px; }
+.wf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.wf-col { grid-column: auto; }
+.wf-col h4 { margin-bottom: 6px; font-size: 14px; font-weight:700; color:#111; }
+.wf-col ul { list-style:none; padding:0; margin:0; }
+.wf-col ul li { margin: 3px 0; }
+.wf-col ul li a { color:#0062ff; text-decoration:none; font-size: 13px; }
+.wf-col ul li a:hover { text-decoration:underline; }
+.wf-col .env { margin-top:12px; }
+.wf-col .env .env-title { font-weight:600; margin-bottom:6px; }
+@media (min-width: 768px){
+  .wf-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px){
+  .wf-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.wf-bottom {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  border-top:1px solid #e6e6e6; margin-top:16px; padding-top:10px;
+  font-size: 13px;
+}
+.wf-bottom .legal { display:flex; gap:10px; list-style:none; padding:0; margin:0; }
+.wf-bottom .legal a { color:#0062ff; }
+
+/* Social icon buttons */
+.social-icons { display:flex; gap:8px; list-style:none; padding:0; margin:4px 0 0 0; }
+.social-icons .icon {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:50%; border:1px solid #d9d9d9;
+  background:#fff; color:#111;
+}
+.social-icons .icon.fb:hover { border-color:#1877F2; color:#1877F2; }
+.social-icons .icon.x:hover { border-color:#000; color:#000; }
+.social-icons .icon.yt:hover { border-color:#FF0000; color:#FF0000; }
+.social-icons .icon.pt:hover { border-color:#BD081C; color:#BD081C; }
+
+
