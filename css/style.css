@@ -607,11 +607,11 @@ body {
 }
 
 /* === Footer used in index.html === */
-.lenovo-footer{
-  background:#fff3e0; /* light orange */
+/* .lenovo-footer{
+  background:#fff3e0;
   color:#000;
   padding:40px 0;
-}
+} */
 
 .lenovo-footer .footer-wrapper{
   width:90%;
@@ -661,7 +661,7 @@ body {
 .lenovo-footer .footer-column.links h2:nth-of-type(odd){ margin-right:0; }
 .lenovo-footer .footer-column.links ul:nth-of-type(odd){ margin-right:0; }
 
-/* Removed special arrow styling for Accessories list */
+Removed special arrow styling for Accessories list
 
 /* Mobile: stack cleanly */
 @media(max-width: 900px){

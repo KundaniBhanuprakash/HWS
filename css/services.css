@@ -457,60 +457,121 @@
   }
 }
 
-/* Lenovo Footer */
-/* Lenovo Footer Section */
-.lenovo-footer {
-  background: #f36b1c;
-  color: #fff;
+/* ============================= */
+/* UNIVERSAL FOOTER STYLES */
+/* ============================= */
+
+.footer {
   font-family: "Poppins", Arial, sans-serif;
-  padding: 60px 5% 0;
   position: relative;
   z-index: 10;
 }
 
-/* Columns layout */
-.footer-wrapper {
+/* Default (Dark Theme) Footer */
+.site-footer {
+  background: #0d1117;
+  color: #cfcfcf;
+  padding: 40px 0;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #fff;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.footer-links,
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.footer-links li,
+.footer-list li {
+  margin: 6px 0;
+}
+
+.footer-links a,
+.footer-list a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-list a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  margin-top: 18px;
+}
+
+/* ============================= */
+/* LENOVO FOOTER (LIGHT THEME) */
+/* ============================= */
+
+.lenovo-footer {
+  background: #f36b1c;
+  color: #ffffff;
+  padding: 60px 5% 0;
+}
+
+.lenovo-footer .footer-wrapper {
+  width: 90%;
+  max-width: var(--container, 1100px);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
   gap: 60px;
+  align-items: start;
 }
 
-/* Logo Box */
-.footer-logo-box {
+/* Logo box inside Lenovo footer */
+.lenovo-footer .footer-logo-box {
   background: #e2231a;
   display: inline-block;
   padding: 8px 25px;
   margin-bottom: 15px;
 }
 
-.lenovo-logo {
+.lenovo-footer .lenovo-logo {
   height: 30px;
   object-fit: contain;
 }
 
-/* Text and Titles */
-.footer-column p {
+/* Typography */
+.lenovo-footer .footer-column h2 {
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.lenovo-footer .footer-column p {
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 25px;
   color: #fff;
 }
 
-.footer-column h2 {
-  color: #000000;
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-/* Lists */
-.footer-list {
+/* Footer list */
+.lenovo-footer .footer-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-list li {
+.lenovo-footer .footer-list li {
   font-size: 15px;
   color: #fff;
   margin-bottom: 10px;
@@ -518,7 +579,7 @@
   padding-left: 15px;
 }
 
-.footer-list li::before {
+.lenovo-footer .footer-list li::before {
   content: "▸";
   position: absolute;
   left: 0;
@@ -526,28 +587,28 @@
   font-size: 13px;
 }
 
-/* Links */
-.footer-list a {
+.lenovo-footer .footer-list a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-list a:hover {
+.lenovo-footer .footer-list a:hover {
   color: #000;
 }
 
 /* Footer bottom */
-.footer-bottom {
+.lenovo-footer .footer-bottom {
   background: #000;
   text-align: center;
   font-size: 14px;
   color: #fff;
   margin-top: 50px;
   padding: 15px 0;
+  border-top: 1px solid rgba(226, 35, 26, 0.2);
 }
 
-.footer-bottom p {
+.lenovo-footer .footer-bottom p {
   margin: 0;
 }
 
@@ -563,23 +624,25 @@
   color: #fff;
 }
 
-/* Responsive Design */
+/* ============================= */
+/* RESPONSIVE FOOTER */
+/* ============================= */
 @media (max-width: 900px) {
-  .footer-wrapper {
+  .footer-grid,
+  .lenovo-footer .footer-wrapper {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .footer-logo-box {
+  .lenovo-footer .footer-logo-box {
     margin: 0 auto 10px;
   }
 
-  .footer-list li {
+  .lenovo-footer .footer-list li {
     padding-left: 0;
   }
 
-  .footer-list li::before {
+  .lenovo-footer .footer-list li::before {
     display: none;
   }
 }
-

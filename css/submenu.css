@@ -84,7 +84,7 @@ body {
 }
 
 .hero p {
-  font-size: 16px;      /* balanced with smaller height */
+  font-size: 16px;
   margin-bottom: 25px;
 }
 
@@ -134,7 +134,8 @@ ul li {
 }
 
 /* Alternating backgrounds */
-.about, .guide {
+.about,
+.guide {
   background: var(--bg);
 }
 
@@ -147,15 +148,6 @@ ul li {
 
 .contact .btn-primary {
   margin-top: 15px;
-}
-
-/* Footer */
-.footer {
-  background: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.9rem;
 }
 
 /* Responsive */
@@ -229,7 +221,8 @@ ul li {
   width: 60px;
   height: 60px;
   margin-bottom: 15px;
-  filter: invert(19%) sepia(91%) saturate(7200%) hue-rotate(357deg) brightness(92%) contrast(92%);
+  filter: invert(19%) sepia(91%) saturate(7200%) hue-rotate(357deg)
+    brightness(92%) contrast(92%);
 }
 
 .fix-card h3 {
@@ -303,14 +296,14 @@ ul li {
   border: 1px solid #f0f0f0;
   border-radius: 10px;
   padding: 25px 30px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   text-align: left;
 }
 
 .choose-card:hover {
   border-color: #e2231a;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(-3px);
 }
 
@@ -323,13 +316,12 @@ ul li {
   display: flex;
   align-items: center;
   height: 100%;
-  transform: translateY(6px); /* 👈 moves icon slightly down */
+  transform: translateY(6px);
 }
 
 .choose-card:hover .icon-box {
   color: #000;
 }
-
 
 .text-box h3 {
   font-size: 20px;
