@@ -471,3 +471,132 @@ ul li {
     font-size: 15px;
   }
 }
+
+/* ============================= */
+/* ✅ Responsive Submenu Styling */
+/* ============================= */
+
+/* 🔸 Submenu toggle (red square button beside labels) */
+.submenu-toggle {
+  background-color: var(--red);
+  border: none;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.submenu-toggle:hover {
+  background-color: var(--red-dark);
+}
+
+.submenu-toggle.open {
+  transform: rotate(180deg);
+}
+
+/* 🔸 Submenu container (hidden by default) */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+  margin: 5px 0 0 0;
+  list-style: none;
+  background-color: #101418;
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 0;
+}
+
+/* 🔸 When submenu is opened */
+.submenu.open {
+  max-height: 1000px;
+  padding: 8px 0;
+}
+
+/* 🔸 Submenu list items */
+.submenu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+/* 🔸 Submenu links */
+.submenu li a {
+  display: block;
+  color: #ddd;
+  padding: 10px 16px 10px 30px;
+  font-size: 14px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.submenu li a:hover {
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.12);
+}
+
+.submenu li a.active {
+  color: #fff;
+  background-color: #1a1f25;
+  border-left: 3px solid var(--red);
+}
+
+/* 🔸 Dropdown button (Services, etc.) */
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 30px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  color: var(--red);
+  background-color: rgba(255,255,255,0.05);
+}
+
+.dropdown-btn .arrow {
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.dropdown-btn.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* 🔸 Desktop hover dropdown behavior (optional if you use hover menus) */
+/* @media (min-width: 1024px) {
+  .menu-dropdown:hover .submenu {
+    max-height: 600px;
+    padding: 8px 0;
+  }
+} */
+
+/* 🔸 Smooth mobile behavior (overlay active state) */
+.menu-overlay.active .submenu {
+  transition: max-height 0.4s ease;
+}
+
+/* 🔸 Prevent layout jump on open/close */
+.menu-item-wrapper {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}

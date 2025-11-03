@@ -304,3 +304,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   io.observe(skillsSection);
 });
+
+//while clicking on subemnu buttons it should work
+
+// Handle submenu toggle clicks
+document.querySelectorAll('.submenu-toggle').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const parent = btn.closest('.menu-dropdown');
+    const submenu = parent.querySelector('.submenu');
+    submenu.classList.toggle('open');
+    btn.classList.toggle('open');
+  });
+});
+// Close submenu if clicking outside

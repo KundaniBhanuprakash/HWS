@@ -10,106 +10,125 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-  <section class="hero-section">
+  <!-- TOP INFO BAR -->
+   <section class="hero-section">
     <div class="top-header" id="topHeader">
       <div class="top-inner container">
         <div class="top-left"><span class="pin">📍</span> Our Workshop: 105 Main St, New York, NY</div>
         <div class="top-center"><span class="clock">🕒</span> Monday - Saturday: 08:00 - 18:00</div>
+       
       </div>
     </div>
 
-    <header class="main-header">
-      <div class="nav-inner container">
-        <a class="logo" href="../index.html">
-          <img src="../images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
-        </a>
+    <!-- NAVBAR -->
+   <header class="main-header">
+  <div class="nav-inner container">
+    <a class="logo" href="/index.html">
+      <img src="/images/Lenovo service support center logo.png" alt="Lenovo Logo" class="site-logo">
+    </a>
 
-        <div class="nav-cta">
-          <button class="hamburger" id="menuBtn" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-         <div class="top-right">
-              <a href="../book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
-          </div>
+    <div class="nav-cta">
+      <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+     <div class="top-right">
+          <a href="/book-repair.html" class="btn btn-small btn-red">Book a Repair</a>
       </div>
-    </header>
+  </div>
+</header>
 
-    <div class="menu-overlay" id="menuOverlay">
-      <div class="menu-content-wrapper">
-        <div class="menu-logo">
-          <img src="../images/Lenovo service support center logo.png" alt="Lenovo Logo">
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-content-wrapper">
+    <!-- Logo on top -->
+    <div class="menu-logo">
+      <img src="/images/Lenovo service support center logo.png" alt="Lenovo Logo">
+    </div>
+
+    <!-- Menu List -->
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="/index.html">Home</a>
+      </li>
+
+      <li class="menu-dropdown">
+        <div class="menu-item-wrapper">
+          <span class="menu-label">Services</span>
+          <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
         </div>
+       <ul class="submenu">
+  <li><a href="/submenu/battery-replacement.html">Lenovo Laptop Battery Replacement</a></li>
+  <li><a href="/submenu/keyboard-replacement.html">Lenovo Laptop Keyboard Replacement</a></li>
+  <li><a href="/submenu/motherboard-repair.html">Lenovo Laptop Motherboard Repair</a></li>
+  <li><a href="/submenu/screen-replacement.html">Lenovo Laptop Screen Replacement</a></li>
+  <li><a href="/submenu/camera-wifi-bluetooth-mic-repair.html">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
+  <li><a href="/submenu/charger-replacement.html">Lenovo Laptop Charger Replacement</a></li>
+  <li><a href="/submenu/ssd-hdd-replacement.html">Lenovo Laptop SSD / HDD Replacement</a></li>
+  <li><a href="/submenu/hinges-fabrication.html">Lenovo Laptop Hinges Fabrication</a></li>
+  <li><a href="/submenu/panel-replacement.html">Lenovo Laptop Panel Replacement</a></li>
+  <li><a href="/submenu/power-supply-replacement.html">Lenovo Laptop Power Supply Replacement</a></li>
+  <li><a href="/submenu/ram-replacement.html">Lenovo Laptop RAM Replacement</a></li>
+  <li><a href="/submenu/water-damage-repair.html">Lenovo Laptop Water Damage Repair</a></li>
+  <li><a href="/submenu/speakers-repair.html">Lenovo Laptop Speakers Not Working Repair</a></li>
+  <li><a href="/submenu/windows-os-installation.html">Lenovo Laptop Windows OS Update & Installation</a></li>
+</ul>
+      </li>
 
-        <ul class="menu-list">
-          <li class="menu-item">
-            <a href="../index.html">Home</a>
-          </li>
-
-          <li class="menu-dropdown">
-            <div class="menu-item-wrapper">
-              <span class="menu-label">Services</span>
-              <button class="submenu-toggle" aria-label="Toggle Services submenu">▾</button>
-            </div>
-            <ul class="submenu">
-              <li><a href="../submenu/battery-replacement.html">Lenovo Laptop Battery Replacement</a></li>
-              <li><a href="../submenu/keyboard-replacement.html">Lenovo Laptop Keyboard Replacement</a></li>
-              <li><a href="../submenu/motherboard-repair.html">Lenovo Laptop Motherboard Repair</a></li>
-              <li><a href="../submenu/screen-replacement.html">Lenovo Laptop Screen Replacement</a></li>
-              <li><a href="../submenu/camera-wifi-bluetooth-mic-repair.html">Lenovo Laptop Camera, WiFi, Bluetooth, Microphone Repair</a></li>
-              <li><a href="../submenu/charger-replacement.html">Lenovo Laptop Charger Replacement</a></li>
-              <li><a href="../submenu/ssd-hdd-replacement.html">Lenovo Laptop SSD / HDD Replacement</a></li>
-              <li><a href="../submenu/hinges-fabrication.html">Lenovo Laptop Hinges Fabrication</a></li>
-              <li><a href="../submenu/panel-replacement.html">Lenovo Laptop Panel Replacement</a></li>
-              <li><a href="../submenu/power-supply-replacement.html">Lenovo Laptop Power Supply Replacement</a></li>
-              <li><a href="../submenu/ram-replacement.html">Lenovo Laptop RAM Replacement</a></li>
-              <li><a href="../submenu/water-damage-repair.html">Lenovo Laptop Water Damage Repair</a></li>
-              <li><a href="../submenu/speakers-repair.html">Lenovo Laptop Speakers Not Working Repair</a></li>
-              <li><a href="../submenu/windows-os-installation.html">Lenovo Laptop Windows OS Update & Installation</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-dropdown">
-            <div class="menu-item-wrapper">
-              <span class="menu-label">Accessories</span>
-              <button class="submenu-toggle" aria-label="Toggle Accessories submenu">▾</button>
-            </div>
-            <ul class="submenu">
-              <li><a href="battery.html">Lenovo Laptop Battery</a></li>
-              <li><a href="camera.html">Lenovo Laptop Camera</a></li>
-              <li><a href="charger.html">Lenovo Laptop Charger</a></li>
-              <li><a href="display-cable.html">Lenovo Laptop Display Cable</a></li>
-              <li><a href="fan.html">Lenovo Laptop Fan</a></li>
-              <li><a href="hinges.html">Lenovo Laptop Hinges</a></li>
-              <li><a href="keyboard.html">Lenovo Laptop Keyboard</a></li>
-              <li><a href="motherboard.html">Lenovo Laptop Motherboard</a></li>
-              <li><a href="panel.html">Lenovo Laptop Panel</a></li>
-              <li><a href="power-supply.html">Lenovo Laptop Power Supply</a></li>
-              <li><a href="ram.html">Lenovo Laptop RAM</a></li>
-              <li><a href="screen.html">Lenovo Laptop Screen</a></li>
-              <li><a href="speaker.html">Lenovo Laptop Speaker</a></li>
-              <li><a href="ssd-hdd.html">Lenovo Laptop SSD or HDD</a></li>
-              <li><a href="touchpad.html">Lenovo Laptop Touchpad</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-item"><a href="../track.html">Track My Repair</a></li>
-          <li class="menu-item"><a href="../blog.html">Blog</a></li>
-          <li class="menu-item"><a href="../contact.html">Contact</a></li>
+      <li class="menu-dropdown">
+        <div class="menu-item-wrapper">
+          <span class="menu-label">Accessories</span>
+          <button class="submenu-toggle" aria-label="Toggle Accessories submenu">▾</button>
+        </div>
+        <ul class="submenu">
+          <li><a href="/accessories/battery.html">Lenovo Laptop Battery</a></li>
+          <li><a href="/accessories/camera.html">Lenovo Laptop Camera</a></li>
+          <li><a href="/accessories/charger.html">Lenovo Laptop Charger</a></li>
+          <li><a href="/accessories/display-cable.html">Lenovo Laptop Display Cable</a></li>
+          <li><a href="/accessories/fan.html">Lenovo Laptop Fan</a></li>
+          <li><a href="/accessories/hinges.html">Lenovo Laptop Hinges</a></li>
+          <li><a href="/accessories/keyboard.html">Lenovo Laptop Keyboard</a></li>
+          <li><a href="/accessories/motherboard.html">Lenovo Laptop Motherboard</a></li>
+          <li><a href="/accessories/panel.html">Lenovo Laptop Panel</a></li>
+          <li><a href="/accessories/power-supply.html">Lenovo Laptop Power Supply</a></li>
+          <li><a href="/accessories/ram.html">Lenovo Laptop RAM</a></li>
+          <li><a href="/accessories/screen.html">Lenovo Laptop Screen</a></li>
+          <li><a href="/accessories/speaker.html">Lenovo Laptop Speaker</a></li>
+          <li><a href="/accessories/ssd-hdd.html">Lenovo Laptop SSD or HDD</a></li>
+          <li><a href="/accessories/touchpad.html">Lenovo Laptop Touchpad</a></li>
         </ul>
-
-        <div class="menu-contact">
-          <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
-          <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
-          <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
+      
+      <li class="menu-item"><a href="/track.html">Track My Repair</a></li>
+      <li class="menu-dropdown">
+        <div class="menu-item-wrapper">
+          <span class="menu-label">Branches</span>
+          <button class="submenu-toggle" aria-label="Toggle Accessories submenu">▾</button>
         </div>
+        <div class="submenu">
+          <a href="#">Telangana</a>
+          <a href="#">Andhra Pradesh</a>
+          <a href="#">Karnataka</a>
+        </div>
+      </li>
+      
+      <li class="menu-item"><a href="/contact.html">Contact</a></li>
+    </ul>
 
-        <button class="btn-outline" id="closeMenu">Close</button>
-      </div>
+    <!-- Contact Info -->
+    <div class="menu-contact">
+      <p><span class="contact-icon">📧</span>support@lenovoservice.example</p>
+      <p><span class="contact-icon">📞</span>+1 (555) 123-4567</p>
+      <p><span class="contact-icon">🏢</span>105 Main St, New York, NY</p>
     </div>
-  </section>
+
+    <!-- Close Button -->
+    <button class="btn-outline" id="closeMenu">Close</button>
+  </div>
+</div>
+
+    </section>
 
   <section class="page-hero" data-aos="fade-up">
     <div class="container">
@@ -176,6 +195,65 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../js/main.js"></script>
+  <!-- All your content above -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ===== Menu overlay =====
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const closeMenu = document.getElementById('closeMenu');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('body-no-scroll');
+  });
+
+  // Close menu
+  closeMenu.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('body-no-scroll');
+  });
+
+  // Close when clicking outside content
+  menuOverlay.addEventListener('click', (e) => {
+    if (e.target === menuOverlay) {
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('body-no-scroll');
+    }
+  });
+
+  // ===== Submenu toggle =====
+  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+  submenuToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parentDropdown = toggle.closest('.menu-dropdown');
+      const submenu = parentDropdown.querySelector('.submenu');
+      submenu.classList.toggle('open');
+      toggle.classList.toggle('rotated');
+    });
+  });
+
+  // ===== FAQ toggle =====
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+
+  // ===== Footer year =====
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
+</script>
+
+<!-- Custom Cursor -->
+<div class="cursor-outer">
+  <div class="cursor-inner"></div>
+</div>
 </body>
 </html>
 
