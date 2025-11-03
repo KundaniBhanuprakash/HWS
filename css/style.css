@@ -109,11 +109,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 2100;
   background: transparent;
   border: none;
-  margin-left: 500px;
+  margin-left: auto;  /* ✅ pushes hamburger all the way to right side */
+  margin-right: 20px; /* ✅ small gap from the screen edge */
 }
+
+
 
 .hamburger span {
   display: block;
@@ -139,7 +142,7 @@ body {
 .menu-overlay {
   position: fixed;
   top: 0;
-  left: 0;
+  left: auto;
   width: 100%;
   max-width: 420px; /* desktop 35% width handled in media query */
   height: 100vh;
@@ -147,7 +150,7 @@ body {
   color: #fff;
   transform: translateX(-100%);
   transition: transform 0.4s ease;
-  z-index: 1200;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -455,6 +458,127 @@ body {
   gap:10px;
 }
 
+
+/* ============================== */
+/* 🔹 NAVBAR LAYOUT & RESPONSIVENESS FIX */
+/* ============================== */
+
+/* Main navbar header area */
+.main-header {
+  background: #fff;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Align items inside header */
+.nav-inner.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px; /* Reduced overall width for cleaner fit */
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+/* Right-side button and hamburger wrapper */
+.nav-cta {
+  margin-left: auto;   /* pushes the whole group (button + hamburger) to the right */
+  display: flex;
+  align-items: center;
+  gap: 12px;           /* space between button & hamburger */
+}
+
+
+/* Move hamburger closer to right side automatically */
+.hamburger {
+  margin-left: 0 !important; /* remove the fixed 500px spacing */
+}
+
+/* Button styling */
+.btn-red {
+  background: var(--red);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-red:hover {
+  background: var(--red-dark);
+  transform: scale(1.05);
+}
+
+/* ============================== */
+/* 🔹 RESPONSIVE BEHAVIOR */
+/* ============================== */
+
+@media (max-width: 992px) {
+  .nav-inner.container {
+    padding: 8px 16px;
+  }
+
+  .logo img {
+    height: 34px;
+  }
+
+  .btn-red {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce logo size and keep items compact */
+  .nav-inner.container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  /* Move Book button slightly inward */
+  .top-right {
+    display: none; /* Hide button on small screens (appears inside overlay menu) */
+  }
+
+  .hamburger {
+    width: 28px;
+    height: 20px;
+  }
+
+  .hamburger span {
+    height: 2.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-inner.container {
+    padding: 6px 14px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .hamburger {
+    width: 26px;
+  }
+}
+
+
 /* Buttons */
 .btn{
   display:inline-block;
@@ -749,57 +873,77 @@ a{cursor:pointer}
       font-size: 1rem;
     }
 
-    /* WHY CHOOSE US SECTION */
+ /* ============================= */
+/* WHY CHOOSE US — Image Card Redesign */
+/* ============================= */
+
 .why-choose-us {
-  padding: 80px 0;
-  background: #f9f9f9;
+  background: #fff;
+  padding: 80px 8%;
+  text-align: center;
 }
 
 .why-choose-us .section-head h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  color: #000;
   margin-bottom: 10px;
 }
 
 .why-choose-us .section-head p {
-  font-size: 1.1rem;
   color: #555;
+  margin-bottom: 40px;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+  gap: 25px;
 }
 
-.why-choose-us .card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.why-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.why-choose-us .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+.why-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+.why-card:hover img {
+  transform: scale(1.1);
 }
 
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+.why-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
+.why-card:hover .why-card-overlay {
+  opacity: 1;
 }
+
+.why-card-overlay h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: rgba(226, 35, 26, 0.9);
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
 
 /* Hero Carousel */
 .hero {
@@ -1599,5 +1743,124 @@ body {
 
   .faq-btn {
     margin-top: 10px;
+  }
+}
+
+/* ========================================= */
+/* 🧩 FINAL RESPONSIVE NAVBAR + BUTTON BEHAVIOR */
+/* ========================================= */
+
+/* 🔹 Small mobiles (≤600px) — hamburger only */
+@media (max-width: 600px) {
+  .navbar {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-cta .btn-red {
+    display: none !important;
+  }
+
+  .menu-overlay {
+    width: 85%;
+    max-width: none;
+  }
+}
+
+/* 🔹 Tablets & Laptops (601px–1199px) — hamburger + button */
+@media (min-width: 601px) and (max-width: 1199px) {
+  .navbar {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* Button visible but can stack below header */
+  .nav-cta .btn-red {
+    display: inline-block !important;
+    margin-top: 10px; /* keeps spacing when below hamburger */
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .menu-overlay {
+    width: 70%;
+    max-width: 420px;
+  }
+
+  /* Ensure .nav-cta doesn’t force inline layout here */
+  .nav-cta {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* 🔹 Desktops (≥1200px) — full navbar + button inline */
+@media (min-width: 1200px) {
+  .nav-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | nav | button */
+    align-items: center;
+    width: 90%;
+    max-width: var(--container);
+    margin: 0 auto;
+    height: 80px;
+  }
+
+  /* Logo */
+  .logo {
+    justify-self: start;
+  }
+
+  /* Navbar links center-aligned */
+  .navbar {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .navbar a {
+    color: #0d1117;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navbar a:hover {
+    color: var(--red);
+  }
+
+  /* Right-aligned CTA */
+  .nav-cta {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-cta .btn-red {
+    display: inline-block !important;
+    background: var(--red);
+    padding: 10px 22px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+    margin-top: 0; /* ensures same line alignment */
+  }
+
+  .nav-cta .btn-red:hover {
+    background: var(--red-dark);
+    transform: scale(1.05);
+  }
+
+  .hamburger {
+    display: none !important;
   }
 }
