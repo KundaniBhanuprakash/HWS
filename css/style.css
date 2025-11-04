@@ -1864,3 +1864,81 @@ body {
     display: none !important;
   }
 }
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #e2231a;
+}
+
+/* Dropdown base */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  padding: 10px 0;
+  min-width: 240px;
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #e2231a;
+}
+
+/* Active (when clicked) */
+
+.dropdown.show .dropdown-menu {
+  display: flex;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

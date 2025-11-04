@@ -318,3 +318,30 @@ document.querySelectorAll('.submenu-toggle').forEach(btn => {
   });
 });
 // Close submenu if clicking outside
+
+
+  // Get all dropdown toggles
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = toggle.parentElement;
+
+      // Close other open dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('show');
+      });
+
+      // Toggle current one
+      parent.classList.toggle('show');
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+    }
+  });
+
